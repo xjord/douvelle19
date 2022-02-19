@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 
+import { ITourDates } from "../../models/index";
 import TourDates from "../TourDates";
 import useStyles from "./Navigation.styles";
 import NavigationTabs from "../NavigationTabs";
@@ -14,7 +15,7 @@ export enum Tabs {
 }
 
 interface NavigationProps {
-  data: any;
+  data: ITourDates;
 }
 
 const Navigation = (props: NavigationProps) => {

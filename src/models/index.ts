@@ -1,3 +1,23 @@
+import { Asset, Sys, Metadata } from "contentful";
+
+export interface ITourDates {
+  tourDates: Asset;
+}
+
+export interface Response {
+  sys: Sys;
+  fields: Field;
+  metadata: Metadata;
+  toPlainObject(): object;
+}
+
+export interface Field {
+  date: string;
+  location: string;
+  ticketLink: any;
+  venue: string;
+}
+
 export enum ShortMonths {
   "Jan" = 0,
   "Feb" = 1,

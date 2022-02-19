@@ -1,10 +1,11 @@
 import React from "react";
 
+import { Response } from "../../models/index";
 import Row from "./Row";
 import useStyles from "./TourDates.styles";
 
 interface TourDatesProps {
-  dates: [];
+  dates: Response[];
 }
 
 const TourDates = (props: TourDatesProps) => {

@@ -1,9 +1,11 @@
 import React from "react";
+
+import { Response } from "../../../models/index";
 import { getDateString } from "../../../utils/helpers";
 import useStyles from "./Row.styles";
 
 interface RowProps {
-  info: any[];
+  info: Response;
 }
 
 const Row = (props: RowProps) => {
