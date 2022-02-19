@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import { createClient } from "contentful";
 
+import { ITourDates } from "../src/models/index";
 import Header from "../src/components/Header";
 import Navigation from "../src/components/Navigation";
 import styles from "../styles/Home.module.css";
@@ -21,7 +21,11 @@ export const getStaticProps = async () => {
   };
 };
 
-const Home: NextPage = (props) => {
+interface NextPageProps {
+  tourDates: ITourDates[];
+}
+
+const Home = (props: NextPageProps) => {
   return (
     <div className={styles.container}>
       <Head>

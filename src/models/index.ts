@@ -1,7 +1,7 @@
-import { Asset, Sys, Metadata } from "contentful";
+import { Sys, Metadata } from "contentful";
 
 export interface ITourDates {
-  tourDates: Asset;
+  tourDates: Response[];
 }
 
 export interface Response {
