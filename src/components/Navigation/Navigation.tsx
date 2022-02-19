@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 
+import TourDates from "../TourDates";
 import useStyles from "./Navigation.styles";
 import NavigationTabs from "../NavigationTabs";
 
@@ -12,7 +13,14 @@ export enum Tabs {
   Merch = "merch",
 }
 
-const Navigation = () => {
+interface NavigationProps {
+  data: any;
+}
+
+const Navigation = (props: NavigationProps) => {
+  const { data } = props;
+  const { tourDates } = data;
+
   const [tabIndex, setTabIndex] = useState<Tabs>(Tabs.Home);
 
   const tabs = [
@@ -32,7 +40,7 @@ const Navigation = () => {
 
   const tabData = useMemo(() => {
     if (tabIndex === Tabs.Home) return <div>home content</div>;
-    if (tabIndex === Tabs.TourDates) return <div>tour dates content</div>;
+    if (tabIndex === Tabs.TourDates) return <TourDates dates={tourDates} />;
     if (tabIndex === Tabs.Edits) return <div>edits content</div>;
     if (tabIndex === Tabs.Music) return <div>music content</div>;
     if (tabIndex === Tabs.Streaming) return <div>streaming content</div>;
