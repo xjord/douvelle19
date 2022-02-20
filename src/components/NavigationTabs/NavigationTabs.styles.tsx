@@ -1,16 +1,18 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
-  wrapper: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: 50,
-    color: 'white',
+  navigationTabs: {
+    display: "flex",
+    justifyContent: "center",
+    color: "white",
   },
   tab: {
     marginRight: 24,
-    fontFamily: 'Poppins-Regular',
-    cursor: 'pointer',
+    fontFamily: "Poppins-Regular",
+    cursor: "pointer",
+    "&:hover": {
+      opacity: 0.8,
+    },
   },
 });
 

@@ -1,13 +1,15 @@
 import React, { useState, useMemo } from "react";
 
 import { ITourDates } from "../../models/index";
+import { openInTab } from "../../utils/helpers";
+import Banner from "../Banner";
 import TourDates from "../TourDates";
 import useStyles from "./Navigation.styles";
 import NavigationTabs from "../NavigationTabs";
 
 export enum Tabs {
   Home = "home",
-  TourDates = "tour dates",
+  Dates = "dates",
   Edits = "edits",
   Music = "music",
   Streaming = "streaming",
@@ -26,22 +28,22 @@ const Navigation = (props: NavigationProps) => {
 
   const tabs = [
     Tabs.Home,
-    Tabs.TourDates,
+    Tabs.Dates,
     Tabs.Edits,
     Tabs.Music,
     Tabs.Streaming,
     Tabs.Merch,
   ];
 
-  const openMerch = () => window.open("https://douvelle19.bandcamp.com/merch");
-
   const tabSelect = (index: Tabs) => {
-    index !== Tabs.Merch ? setTabIndex(index) : openMerch();
+    index !== Tabs.Merch
+      ? setTabIndex(index)
+      : openInTab("https://douvelle19.bandcamp.com/merch");
   };
 
   const tabData = useMemo(() => {
-    if (tabIndex === Tabs.Home) return <div>home content</div>;
-    if (tabIndex === Tabs.TourDates) return <TourDates dates={tourDates} />;
+    if (tabIndex === Tabs.Home) return <Banner />;
+    if (tabIndex === Tabs.Dates) return <TourDates dates={tourDates} />;
     if (tabIndex === Tabs.Edits) return <div>edits content</div>;
     if (tabIndex === Tabs.Music) return <div>music content</div>;
     if (tabIndex === Tabs.Streaming) return <div>streaming content</div>;

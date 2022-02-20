@@ -12,7 +12,9 @@ export const getStaticProps = async () => {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
   });
 
-  const res = await client.getEntries({ content_type: "tourDate" });
+  const res = await client.getEntries({
+    content_type: ["tourDate", "homeBanner"],
+  });
 
   return {
     props: {

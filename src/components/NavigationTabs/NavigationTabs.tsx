@@ -17,7 +17,7 @@ const NavigationTabs = (props: NavigationTabsProps) => {
   //TODO: isActive styling currentTab === index
 
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.navigationTabs}>
       {tabs?.map((step, index) => {
         return (
           <div

@@ -12,6 +12,9 @@ const useStyles = createUseStyles({
     width: 16,
     height: 16,
     marginRight: 8,
+    "&:hover": {
+      opacity: 0.8,
+    },
   },
 });
 

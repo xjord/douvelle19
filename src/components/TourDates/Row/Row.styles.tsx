@@ -5,7 +5,6 @@ const useStyles = createUseStyles({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    width: "100%",
     borderWidth: 1,
     borderRadius: 4,
     borderColor: "white",
@@ -15,15 +14,33 @@ const useStyles = createUseStyles({
     paddingRight: 10,
     paddingLeft: 10,
   },
-  rowEvent: {
+  rowColumn: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  rowEvent: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  rowEventInfo: {
+    display: "flex",
+    flexDirection: "column",
+    marginRight: 24,
+  },
+  rowEventLocation: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
   rowDate: {},
   rowVenue: {},
-  rowLocation: {},
-  rowTicket: {},
+  rowTicket: {
+    display: "flex",
+    justifyContent: "flex-end",
+  },
 });
 
 export default useStyles;

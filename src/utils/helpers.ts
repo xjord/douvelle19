@@ -1,5 +1,5 @@
 import { parseISO, isToday, isTomorrow } from "date-fns";
-import { ShortMonths, LongDays } from "../models/index";
+import { ShortMonths, ShortDays } from "../models/index";
 
 export const getDateString = (date: string, showFullDate?: boolean) => {
   const parsedDate = parseISO(date);
@@ -8,7 +8,11 @@ export const getDateString = (date: string, showFullDate?: boolean) => {
     if (isTomorrow(parsedDate)) return "Tomorrow";
   }
 
-  return `${LongDays[parsedDate.getDay()]} ${parsedDate.getDate()} ${
+  return `${ShortDays[parsedDate.getDay()]} ${parsedDate.getDate()} ${
     ShortMonths[parsedDate.getMonth()]
   }`;
+};
+
+export const openInTab = (link: string) => {
+  window.open(link);
 };
