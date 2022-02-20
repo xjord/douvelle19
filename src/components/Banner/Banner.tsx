@@ -14,7 +14,7 @@ const Home = () => {
           <img className={classes.bannerImage} src={"/EP.png"} />
         </div>
         <div className={classes.bannerText}>
-          <div>"D19" is out now</div>
+          <div>{'"D19" is out now'}</div>
           <div>Stream/Purchase here</div>
         </div>
       </div>
