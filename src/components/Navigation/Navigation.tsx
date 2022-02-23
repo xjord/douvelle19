@@ -1,19 +1,22 @@
 import React, { useState, useMemo } from "react";
 
 import { ITourDates } from "../../models/index";
-import { openInTab } from "../../utils/helpers";
+import { openLink } from "../../utils/helpers";
 import Banner from "../Banner";
+import Music from "../Music";
 import TourDates from "../TourDates";
+import MailingList from "../MailingList";
+import Contact from "../Contact";
 import useStyles from "./Navigation.styles";
 import NavigationTabs from "../NavigationTabs";
 
 export enum Tabs {
   Home = "home",
   Dates = "dates",
-  Edits = "edits",
   Music = "music",
-  Streaming = "streaming",
   Merch = "merch",
+  Contact = "contact",
+  MailingList = "mailing list",
 }
 
 interface NavigationProps {
@@ -22,31 +25,31 @@ interface NavigationProps {
 
 const Navigation = (props: NavigationProps) => {
   const { data } = props;
-  const { tourDates } = data;
+  const { banner } = data;
 
   const [tabIndex, setTabIndex] = useState<Tabs>(Tabs.Home);
 
   const tabs = [
     Tabs.Home,
-    Tabs.Dates,
-    Tabs.Edits,
     Tabs.Music,
-    Tabs.Streaming,
+    Tabs.Dates,
     Tabs.Merch,
+    Tabs.MailingList,
+    Tabs.Contact,
   ];
 
   const tabSelect = (index: Tabs) => {
     index !== Tabs.Merch
       ? setTabIndex(index)
-      : openInTab("https://douvelle19.bandcamp.com/merch");
+      : openLink("https://douvelle19.bandcamp.com/merch");
   };
 
   const tabData = useMemo(() => {
-    if (tabIndex === Tabs.Home) return <Banner />;
-    if (tabIndex === Tabs.Dates) return <TourDates dates={tourDates} />;
-    if (tabIndex === Tabs.Edits) return <div>edits content</div>;
-    if (tabIndex === Tabs.Music) return <div>music content</div>;
-    if (tabIndex === Tabs.Streaming) return <div>streaming content</div>;
+    if (tabIndex === Tabs.Home) return <Banner banner={banner} />;
+    if (tabIndex === Tabs.Dates) return <TourDates />;
+    if (tabIndex === Tabs.Music) return <Music />;
+    if (tabIndex === Tabs.MailingList) return <MailingList />;
+    if (tabIndex === Tabs.Contact) return <Contact />;
   }, [tabIndex]);
 
   const classes = useStyles();

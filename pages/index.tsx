@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 
 import { ITourDates } from "../src/models/index";
 import Header from "../src/components/Header";
+import Socials from "../src/components/Socials";
 import Navigation from "../src/components/Navigation";
 import styles from "../styles/Home.module.css";
 
@@ -18,7 +19,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      tourDates: res.items,
+      banner: res.items,
     },
   };
 };
@@ -35,7 +36,7 @@ const Home = (props: NextPageProps) => {
         <meta name="description" content="Douvelle19 music producer and dj" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Socials />
       <Header />
       <Navigation data={props} />
     </div>

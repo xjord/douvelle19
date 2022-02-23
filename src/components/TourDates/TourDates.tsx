@@ -1,23 +1,16 @@
 import React from "react";
+import InnerHTML from "dangerously-set-html-content";
 
-import { Response } from "../../models/index";
-import Row from "./Row";
 import useStyles from "./TourDates.styles";
 
-interface TourDatesProps {
-  dates: Response[];
-}
-
-const TourDates = (props: TourDatesProps) => {
-  const { dates } = props;
-
+const TourDates = () => {
   const classes = useStyles();
+
+  const songKickWidget = `<a href="https://www.songkick.com/artists/10110895" class="songkick-widget" data-theme="dark" data-track-button="on" data-detect-style="true" data-font-color="#ffffff" data-background-color="transparent" data-locale="en">Douvelle19 Tour Dates</a> <script src="//widget.songkick.com/10110895/widget.js"></script>`;
 
   return (
     <div className={classes.tourDate}>
-      {dates?.map((date) => (
-        <Row key={date.sys.id} info={date} />
-      ))}
+      <InnerHTML html={songKickWidget} />
     </div>
   );
 };

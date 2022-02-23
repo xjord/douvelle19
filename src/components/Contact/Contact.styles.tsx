@@ -1,17 +1,17 @@
 import { createUseStyles } from "react-jss";
 
 const useStyles = createUseStyles({
-  navigation: {
+  contact: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     color: "white",
+    fontSize: 18,
   },
-  navigationData: {
-    width: "100%",
-    height: "100%",
-    marginTop: 100,
+  contactLink: {
+    marginTop: 4,
+    fontWeight: "600",
   },
 });
 

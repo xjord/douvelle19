@@ -9,7 +9,7 @@ import {
   faSpotify,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { openInTab } from "../../utils/helpers";
+import { openLink } from "../../utils/helpers";
 import useStyles from "./Socials.styles";
 
 enum SocialLinks {
@@ -22,42 +22,48 @@ enum SocialLinks {
 }
 
 const Socials = () => {
-  const openSocial = (link: SocialLinks) => openInTab(link);
+  const openSocial = (link: SocialLinks) => openLink(link);
 
   const classes = useStyles();
 
   return (
     <div className={classes.socialWrapper}>
-      <FontAwesomeIcon
-        className={classes.socialIcon}
-        icon={faSpotify}
-        onClick={() => openSocial(SocialLinks.Spotify)}
-      />
-      <FontAwesomeIcon
-        className={classes.socialIcon}
-        icon={faInstagram}
-        onClick={() => openSocial(SocialLinks.Instagram)}
-      />
-      <FontAwesomeIcon
-        className={classes.socialIcon}
-        icon={faSoundcloud}
-        onClick={() => openSocial(SocialLinks.Soundcloud)}
-      />
-      <FontAwesomeIcon
-        className={classes.socialIcon}
-        icon={faTwitter}
-        onClick={() => openSocial(SocialLinks.Twitter)}
-      />
-      <FontAwesomeIcon
-        className={classes.socialIcon}
-        icon={faYoutube}
-        onClick={() => openSocial(SocialLinks.Youtube)}
-      />
-      <FontAwesomeIcon
-        className={classes.socialIcon}
-        icon={faFacebook}
-        onClick={() => openSocial(SocialLinks.Facebook)}
-      />
+      <div className={classes.socialIcon}>
+        <FontAwesomeIcon
+          icon={faSpotify}
+          onClick={() => openSocial(SocialLinks.Spotify)}
+        />
+      </div>
+      <div className={classes.socialIcon}>
+        <FontAwesomeIcon
+          icon={faInstagram}
+          onClick={() => openSocial(SocialLinks.Instagram)}
+        />
+      </div>
+      <div className={classes.socialIcon}>
+        <FontAwesomeIcon
+          icon={faSoundcloud}
+          onClick={() => openSocial(SocialLinks.Soundcloud)}
+        />
+      </div>
+      <div className={classes.socialIcon}>
+        <FontAwesomeIcon
+          icon={faTwitter}
+          onClick={() => openSocial(SocialLinks.Twitter)}
+        />
+      </div>
+      <div className={classes.socialIcon}>
+        <FontAwesomeIcon
+          icon={faYoutube}
+          onClick={() => openSocial(SocialLinks.Youtube)}
+        />
+      </div>
+      <div className={classes.socialIcon}>
+        <FontAwesomeIcon
+          icon={faFacebook}
+          onClick={() => openSocial(SocialLinks.Facebook)}
+        />
+      </div>
     </div>
   );
 };

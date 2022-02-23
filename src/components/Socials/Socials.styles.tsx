@@ -7,6 +7,8 @@ const useStyles = createUseStyles({
     right: 24,
     display: "flex",
     justifyContent: "center",
+    zIndex: 9999,
+    color: "white",
   },
   socialIcon: {
     width: 16,

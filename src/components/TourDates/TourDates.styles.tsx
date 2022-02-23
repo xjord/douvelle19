@@ -6,6 +6,7 @@ const useStyles = createUseStyles({
     flexDirection: "column",
     justifyContent: "center",
     width: "100%",
+    color: "white",
   },
 });
 
