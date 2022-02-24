@@ -15,6 +15,7 @@ const useStyles = createUseStyles({
   },
   bannerImageWrapper: {
     marginRight: 24,
+    cursor: "pointer",
   },
   bannerImage: {
     borderRadius: 4,
@@ -27,6 +28,9 @@ const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+  },
+  bannerButtonWrapper: {
+    marginTop: 8,
   },
 });
 

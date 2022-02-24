@@ -1,15 +1,16 @@
 import React from "react";
 import Image from "next/image";
 
-import { openLink } from "../../utils/helpers";
+import { openInTab } from "../../utils/helpers";
+import Button from "../Button";
 import useStyles from "./Banner.styles";
 
 const Home = ({ banner }) => {
-  const classes = useStyles();
-
   const releaseTitle = banner?.fields?.releaseTitle;
   const releaseLink = banner?.fields?.link?.content[0]?.content[0]?.value;
-  const releaseImage = banner?.fields?.file?.fileName;
+  const releaseImage = banner?.fields?.bannerImage?.fields?.file?.url;
+
+  const classes = useStyles();
 
   return (
     <div className={classes.bannerWrapper}>
@@ -19,13 +20,18 @@ const Home = ({ banner }) => {
             className={classes.bannerImage}
             height={500}
             width={500}
-            src={"/EP.png"}
+            src={"https:" + releaseImage}
             alt={releaseTitle}
+            onClick={() => openInTab(releaseLink)}
           />
         </div>
         <div className={classes.bannerText}>
-          <div>{`"${releaseTitle} is out now`}</div>
-          <div onClick={() => openLink(releaseLink)}>Stream/Purchase here</div>
+          <div>{releaseTitle}</div>
+          <div className={classes.bannerButtonWrapper}>
+            <Button onClick={() => openInTab(releaseLink)}>
+              Stream/Purchase here
+            </Button>
+          </div>
         </div>
       </div>
     </div>

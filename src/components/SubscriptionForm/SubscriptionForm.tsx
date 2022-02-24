@@ -43,7 +43,6 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
           onChange={setEmail}
           type="email"
           value={email}
-          placeholder="your@email.com"
         />
 
         <TextField
@@ -51,7 +50,6 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
           onChange={setFirstName}
           type="text"
           value={firstName}
-          placeholder="Jane"
         />
 
         <TextField
@@ -59,7 +57,6 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
           onChange={setLastName}
           type="text"
           value={lastName}
-          placeholder="Doe"
           isRequired
         />
 
@@ -68,12 +65,13 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
           onChange={setPhoneNumber}
           type="text"
           value={phoneNumber}
-          placeholder="phone number"
           isRequired
         />
       </div>
 
-      {/* <Button isLoading /> */}
+      <div className={classes.formButtonWrapper}>
+        <Button>Submit</Button>
+      </div>
       <input
         label="subscribe"
         type="submit"

@@ -14,11 +14,10 @@ const NavigationTabs = (props: NavigationTabsProps) => {
 
   const classes = useStyles();
 
-  //TODO: isActive styling currentTab === index
-
   return (
     <div className={classes.navigationTabs}>
       {tabs?.map((step, index) => {
+        const isActive = currentTab === step;
         return (
           <div
             key={index}

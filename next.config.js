@@ -16,6 +16,9 @@ const nextConfig = {
       "_src/*": ["./src/*"],
     },
   },
+  images: {
+    domains: ["images.ctfassets.net"],
+  },
 };
 
 module.exports = nextConfig;

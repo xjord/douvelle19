@@ -7,9 +7,11 @@ import {
   faYoutube,
   faSoundcloud,
   faSpotify,
+  faBandcamp,
+  faItunes,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { openLink } from "../../utils/helpers";
+import { openInTab } from "../../utils/helpers";
 import useStyles from "./Socials.styles";
 
 enum SocialLinks {
@@ -19,10 +21,12 @@ enum SocialLinks {
   Instagram = "https://www.instagram.com/douvelle19/?hl=en",
   Twitter = "https://twitter.com/DOUVELLE19",
   Youtube = "https://www.youtube.com/c/Douvelle19",
+  Bandcamp = "https://douvelle19.bandcamp.com/",
+  AppleMusic = "https://music.apple.com/gb/artist/douvelle19/1431666609",
 }
 
 const Socials = () => {
-  const openSocial = (link: SocialLinks) => openLink(link);
+  const openSocial = (link: SocialLinks) => openInTab(link);
 
   const classes = useStyles();
 
@@ -62,6 +66,18 @@ const Socials = () => {
         <FontAwesomeIcon
           icon={faFacebook}
           onClick={() => openSocial(SocialLinks.Facebook)}
+        />
+      </div>
+      <div className={classes.socialIcon}>
+        <FontAwesomeIcon
+          icon={faItunes}
+          onClick={() => openSocial(SocialLinks.AppleMusic)}
+        />
+      </div>
+      <div className={classes.socialIcon}>
+        <FontAwesomeIcon
+          icon={faBandcamp}
+          onClick={() => openSocial(SocialLinks.Bandcamp)}
         />
       </div>
     </div>

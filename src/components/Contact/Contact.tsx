@@ -7,10 +7,15 @@ const Contact = () => {
 
   return (
     <div className={classes.contact}>
-      <div>Management / Bookings</div>
-      <div className={classes.contactLink}>Riccardo Primavera</div>
+      <div className={classes.contactInfo}>
+        <div>Management / Bookings</div>
+        <div className={classes.contactLink}>Riccardo Primavera</div>
+      </div>
 
-      {/* TODO: add dells contact too and do it via contentful */}
+      <div className={classes.contactInfo}>
+        <div>Other</div>
+        <div className={classes.contactLink}>Douvelle19</div>
+      </div>
     </div>
   );
 };

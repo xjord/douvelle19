@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 
 import { ITourDates } from "../../models/index";
-import { openLink } from "../../utils/helpers";
+import { openInTab } from "../../utils/helpers";
 import Banner from "../Banner";
 import Music from "../Music";
 import TourDates from "../TourDates";
@@ -41,7 +41,7 @@ const Navigation = (props: NavigationProps) => {
   const tabSelect = (index: Tabs) => {
     index !== Tabs.Merch
       ? setTabIndex(index)
-      : openLink("https://douvelle19.bandcamp.com/merch");
+      : openInTab("https://douvelle19.bandcamp.com/merch");
   };
 
   const tabData = useMemo(() => {

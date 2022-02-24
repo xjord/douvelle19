@@ -14,12 +14,13 @@ export const getStaticProps = async () => {
   });
 
   const res = await client.getEntries({
-    content_type: ["tourDate", "homeBanner"],
+    content_type: ["homeBanner", "logo"],
   });
 
   return {
     props: {
-      banner: res.items,
+      logo: res.items[0],
+      banner: res.items[1],
     },
   };
 };
@@ -29,6 +30,8 @@ interface NextPageProps {
 }
 
 const Home = (props: NextPageProps) => {
+  const { logo } = props;
+
   return (
     <div className={styles.container}>
       <Head>
@@ -37,7 +40,7 @@ const Home = (props: NextPageProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Socials />
-      <Header />
+      <Header logo={logo} />
       <Navigation data={props} />
     </div>
   );

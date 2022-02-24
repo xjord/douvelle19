@@ -3,13 +3,17 @@ import Image from "next/image";
 
 import useStyles from "./Header.styles";
 
-const Header = () => {
+const Header = (props) => {
+  const { logo } = props;
+
+  const image = logo?.fields?.logo?.fields?.file?.url;
+
   const classes = useStyles();
 
   return (
     <header className={classes.header}>
       <Image
-        src={"/d19.png"}
+        src={"https:" + image}
         width={200}
         height={200}
         className={classes.headerLogo}

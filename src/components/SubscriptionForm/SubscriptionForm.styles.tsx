@@ -7,9 +7,15 @@ const useStyles = createUseStyles({
     justifyContent: "center",
     alignItems: "center",
     color: "white",
+    width: "100%",
   },
-  formTitle: {},
+  formTitle: {
+    marginBottom: "5%",
+  },
   form: {},
+  formButtonWrapper: {
+    marginTop: "5%",
+  },
 });
 
 export default useStyles;
