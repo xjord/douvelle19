@@ -1,5 +1,5 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
   faTwitter,
@@ -9,77 +9,39 @@ import {
   faSpotify,
   faBandcamp,
   faItunes,
-} from "@fortawesome/free-brands-svg-icons";
+} from '@fortawesome/free-brands-svg-icons';
 
-import { openInTab } from "../../utils/helpers";
-import useStyles from "./Socials.styles";
+import { openInTab } from '../../utils/helpers';
+import useStyles from './Socials.styles';
 
-enum SocialLinks {
-  Spotify = "https://open.spotify.com/artist/3EjNHY8UswIZAxMjqXewVH",
-  Soundcloud = "https://soundcloud.com/douvelle19",
-  Facebook = "https://www.facebook.com/douvelle19/",
-  Instagram = "https://www.instagram.com/douvelle19/?hl=en",
-  Twitter = "https://twitter.com/DOUVELLE19",
-  Youtube = "https://www.youtube.com/c/Douvelle19",
-  Bandcamp = "https://douvelle19.bandcamp.com/",
-  AppleMusic = "https://music.apple.com/gb/artist/douvelle19/1431666609",
-}
+const Socials = ({ socials }) => {
+  const openSocial = (link: string) => openInTab(link);
 
-const Socials = () => {
-  const openSocial = (link: SocialLinks) => openInTab(link);
+  const SocialIcons = {
+    Spotify: faSpotify,
+    Soundcloud: faSoundcloud,
+    Facebook: faFacebook,
+    Instagram: faInstagram,
+    Twitter: faTwitter,
+    Youtube: faYoutube,
+    Bandcamp: faBandcamp,
+    Apple: faItunes,
+  };
 
   const classes = useStyles();
 
   return (
     <div className={classes.socialWrapper}>
-      <div className={classes.socialIcon}>
-        <FontAwesomeIcon
-          icon={faSpotify}
-          onClick={() => openSocial(SocialLinks.Spotify)}
-        />
-      </div>
-      <div className={classes.socialIcon}>
-        <FontAwesomeIcon
-          icon={faInstagram}
-          onClick={() => openSocial(SocialLinks.Instagram)}
-        />
-      </div>
-      <div className={classes.socialIcon}>
-        <FontAwesomeIcon
-          icon={faSoundcloud}
-          onClick={() => openSocial(SocialLinks.Soundcloud)}
-        />
-      </div>
-      <div className={classes.socialIcon}>
-        <FontAwesomeIcon
-          icon={faTwitter}
-          onClick={() => openSocial(SocialLinks.Twitter)}
-        />
-      </div>
-      <div className={classes.socialIcon}>
-        <FontAwesomeIcon
-          icon={faYoutube}
-          onClick={() => openSocial(SocialLinks.Youtube)}
-        />
-      </div>
-      <div className={classes.socialIcon}>
-        <FontAwesomeIcon
-          icon={faFacebook}
-          onClick={() => openSocial(SocialLinks.Facebook)}
-        />
-      </div>
-      <div className={classes.socialIcon}>
-        <FontAwesomeIcon
-          icon={faItunes}
-          onClick={() => openSocial(SocialLinks.AppleMusic)}
-        />
-      </div>
-      <div className={classes.socialIcon}>
-        <FontAwesomeIcon
-          icon={faBandcamp}
-          onClick={() => openSocial(SocialLinks.Bandcamp)}
-        />
-      </div>
+      {socials.reverse().map((social, index) => {
+        const link = social?.fields?.link;
+        const type = social?.fields?.type;
+
+        return (
+          <div key={index} className={classes.socialIcon}>
+            <FontAwesomeIcon icon={SocialIcons[type]} onClick={() => openSocial(link)} />
+          </div>
+        );
+      })}
     </div>
   );
 };

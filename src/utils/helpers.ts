@@ -16,3 +16,5 @@ export const getDateString = (date: string, showFullDate?: boolean) => {
 export const openLink = (link: string) => window.open(link, "_self");
 
 export const openInTab = (link: string) => window.open(link);
+
+export const openEmail = (email: string) => window.open(`mailto:${email}`);

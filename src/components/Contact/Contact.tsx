@@ -1,21 +1,25 @@
-import React from "react";
+import React from 'react';
 
-import useStyles from "./Contact.styles";
+import { openEmail } from '../../utils/helpers';
+import useStyles from './Contact.styles';
 
-const Contact = () => {
+const Contact = ({ contacts }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.contact}>
-      <div className={classes.contactInfo}>
-        <div>Management / Bookings</div>
-        <div className={classes.contactLink}>Riccardo Primavera</div>
-      </div>
+      {contacts.map((contact, index) => {
+        const { title, name, emailAddress } = contact?.fields;
 
-      <div className={classes.contactInfo}>
-        <div>Other</div>
-        <div className={classes.contactLink}>Douvelle19</div>
-      </div>
+        return (
+          <div key={index} className={classes.contactInfo}>
+            <div>{title}</div>
+            <div className={classes.contactLink} onClick={() => openEmail(emailAddress)}>
+              {name}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

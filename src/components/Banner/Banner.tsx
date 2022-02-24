@@ -6,9 +6,10 @@ import Button from "../Button";
 import useStyles from "./Banner.styles";
 
 const Home = ({ banner }) => {
-  const releaseTitle = banner?.fields?.releaseTitle;
-  const releaseLink = banner?.fields?.link?.content[0]?.content[0]?.value;
-  const releaseImage = banner?.fields?.bannerImage?.fields?.file?.url;
+
+  const releaseTitle = banner?.releaseTitle;
+  const releaseLink = banner?.link?.content[0]?.content[0]?.value;
+  const releaseImage = banner?.bannerImage?.fields?.file?.url;
 
   const classes = useStyles();
 
