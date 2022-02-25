@@ -14,7 +14,7 @@ const Contact = ({ contacts }) => {
 
         return (
           <div key={index} className={classes.contactWrapper}>
-            <div>
+            <div className={classes.contactInfo}>
               <div className={classes.contactTitle}>{title}</div>
               <div className={classes.contactLink} onClick={() => openEmail(emailAddress)}>
                 {name}

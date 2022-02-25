@@ -21,12 +21,16 @@ const useStyles = createUseStyles({
     width: '100%',
     marginBottom: 24,
   },
+  contactInfo: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    height: 48,
+  },
   contactTitle: {
     color: '#AEAEAE',
-    marginBottom: 8,
   },
   contactLink: {
-    marginTop: 4,
     fontWeight: '600',
   },
 });
