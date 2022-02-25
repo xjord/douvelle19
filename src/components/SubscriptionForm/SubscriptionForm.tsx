@@ -74,7 +74,7 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
       <div className={classes.formButtonWrapper}>
         <Button>Submit</Button>
       </div>
-      <input label="subscribe" type="submit" formValues={[email, firstName, lastName, phoneNumber]} />
+      {/* <input label="subscribe" type="submit" formValues={[email, firstName, lastName, phoneNumber]} /> */}
     </form>
   );
 };
