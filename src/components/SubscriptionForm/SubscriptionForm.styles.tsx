@@ -14,6 +14,8 @@ const useStyles = createUseStyles({
     paddingBottom: '3%',
   },
   formTitle: {
+    textAlign: 'center',
+    width: '50%',
     marginBottom: '5%',
   },
   form: {},
