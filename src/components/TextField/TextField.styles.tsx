@@ -1,10 +1,10 @@
-import { createUseStyles } from "react-jss";
+import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   textField: {
     height: 70,
     marginBottom: 32,
-    width: "100%",
+    width: '100%',
   },
   textFieldLabel: {
     minHeight: 20,
@@ -12,17 +12,15 @@ const useStyles = createUseStyles({
   },
   textFieldInput: {
     width: 500,
-    backgroundColor: "#EFF2FC",
-    borderColor: "white",
-    color: "#0A1D2C",
+    backgroundColor: '#373737',
+    color: '#AEAEAE',
     borderRadius: 4,
     fontSize: 16,
-    borderWidth: 2,
+    borderWidth: 0,
     padding: 16,
     height: 48,
-    // boxShadow: "none !important",
-    "&:focus": {
-      outline: "none",
+    '&:focus': {
+      outline: 'none',
     },
   },
 });

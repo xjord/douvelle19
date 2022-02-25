@@ -1,17 +1,17 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState } from 'react';
 
-import Button from "../Button";
-import TextField from "../TextField";
-import useStyles from "./SubscriptionForm.styles";
+import Button from '../Button';
+import TextField from '../TextField';
+import useStyles from './SubscriptionForm.styles';
 
 const SubscriptionForm = ({ status, message, onValidated }) => {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
-  const isLoading = useMemo(() => status === "sending", [status]);
-  const subscribed = useMemo(() => status === "success", [status]);
+  const isLoading = useMemo(() => status === 'sending', [status]);
+  const subscribed = useMemo(() => status === 'success', [status]);
 
   //   message
 
@@ -21,7 +21,7 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
       firstName &&
       lastName &&
       phoneNumber &&
-      email.indexOf("@") > -1 &&
+      email.indexOf('@') > -1 &&
       onValidated({
         EMAIL: email,
         MERGE1: firstName,
@@ -34,26 +34,27 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
 
   return (
     <form className={classes.formWrapper} onSubmit={(e) => handleSubmit(e)}>
-      <h3 className={classes.formTitle}>
-        Sign up for the latest news on releases, edits, tour dates and more.
-      </h3>
+      <h3 className={classes.formTitle}>Sign up for the latest news on releases, edits, tour dates and more.</h3>
       <div className={classes.form}>
         <TextField
-          label="Email Address"
+          label="Email address"
+          placeholder="Email address here..."
           onChange={setEmail}
           type="email"
           value={email}
         />
 
         <TextField
-          label="First Name"
+          label="First name"
+          placeholder="First name here..."
           onChange={setFirstName}
           type="text"
           value={firstName}
         />
 
         <TextField
-          label="Last Name"
+          label="Last name"
+          placeholder="Last name here..."
           onChange={setLastName}
           type="text"
           value={lastName}
@@ -61,7 +62,8 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
         />
 
         <TextField
-          label="Phone Number"
+          label="Phone number"
+          placeholder="Phone number here..."
           onChange={setPhoneNumber}
           type="text"
           value={phoneNumber}
@@ -72,11 +74,7 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
       <div className={classes.formButtonWrapper}>
         <Button>Submit</Button>
       </div>
-      <input
-        label="subscribe"
-        type="submit"
-        formValues={[email, firstName, lastName, phoneNumber]}
-      />
+      <input label="subscribe" type="submit" formValues={[email, firstName, lastName, phoneNumber]} />
     </form>
   );
 };

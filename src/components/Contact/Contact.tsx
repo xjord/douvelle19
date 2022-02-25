@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { openEmail } from '../../utils/helpers';
+import Button from '../Button';
 import useStyles from './Contact.styles';
 
 const Contact = ({ contacts }) => {
@@ -12,11 +13,14 @@ const Contact = ({ contacts }) => {
         const { title, name, emailAddress } = contact?.fields;
 
         return (
-          <div key={index} className={classes.contactInfo}>
-            <div>{title}</div>
-            <div className={classes.contactLink} onClick={() => openEmail(emailAddress)}>
-              {name}
+          <div key={index} className={classes.contactWrapper}>
+            <div>
+              <div className={classes.contactTitle}>{title}</div>
+              <div className={classes.contactLink} onClick={() => openEmail(emailAddress)}>
+                {name}
+              </div>
             </div>
+            <Button>Email</Button>
           </div>
         );
       })}

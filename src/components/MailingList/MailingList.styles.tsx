@@ -1,7 +1,10 @@
-import { createUseStyles } from "react-jss";
+import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
-  mailingList: {},
+  mailingList: {
+    paddingLeft: '20%',
+    paddingRight: '20%',
+  },
 });
 
 export default useStyles;

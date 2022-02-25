@@ -1,20 +1,24 @@
-import { createUseStyles } from "react-jss";
+import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   formWrapper: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "white",
-    width: "100%",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'white',
+    width: '100%',
+    backgroundColor: 'black',
+    borderRadius: 8,
+    paddingTop: '3%',
+    paddingBottom: '3%',
   },
   formTitle: {
-    marginBottom: "5%",
+    marginBottom: '5%',
   },
   form: {},
   formButtonWrapper: {
-    marginTop: "5%",
+    marginTop: '5%',
   },
 });
 
