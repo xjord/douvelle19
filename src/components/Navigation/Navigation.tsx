@@ -9,6 +9,7 @@ import MailingList from '../MailingList';
 import Contact from '../Contact';
 import useStyles from './Navigation.styles';
 import NavigationTabs from '../NavigationTabs';
+import Merch from '../Merch';
 
 export enum Tabs {
   Home = 'home',
@@ -25,20 +26,19 @@ interface NavigationProps {
 
 const Navigation = (props: NavigationProps) => {
   const { data } = props;
-  const { banner, contacts } = data;
+  const { banner, contacts, merch } = data;
 
   const [tabIndex, setTabIndex] = useState<Tabs>(Tabs.Home);
 
   const tabs = [Tabs.Home, Tabs.Music, Tabs.Dates, Tabs.Merch, Tabs.MailingList, Tabs.Contact];
 
-  const tabSelect = (index: Tabs) => {
-    index !== Tabs.Merch ? setTabIndex(index) : openInTab('https://douvelle19.bandcamp.com/merch');
-  };
+  const tabSelect = (index: Tabs) => setTabIndex(index);
 
   const tabData = useMemo(() => {
     if (tabIndex === Tabs.Home) return <Banner banner={banner} />;
     if (tabIndex === Tabs.Dates) return <TourDates />;
     if (tabIndex === Tabs.Music) return <Music />;
+    if (tabIndex === Tabs.Merch) return <Merch merch={merch} />;
     if (tabIndex === Tabs.MailingList) return <MailingList />;
     if (tabIndex === Tabs.Contact) return <Contact contacts={contacts} />;
   }, [tabIndex]);

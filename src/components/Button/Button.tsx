@@ -1,7 +1,7 @@
-import React from "react";
-import ClipLoader from "react-spinners/ClipLoader";
+import React from 'react';
+import ClipLoader from 'react-spinners/ClipLoader';
 
-import useStyles from "./Button.styles";
+import useStyles from './Button.styles';
 
 const Button = (props) => {
   const { children, isLoading = false, onClick } = props;

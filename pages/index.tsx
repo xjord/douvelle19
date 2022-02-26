@@ -33,12 +33,17 @@ export const getStaticProps = async () => {
     content_type: 'socialLink',
   });
 
+  const merch = await client.getEntries({
+    content_type: 'merch',
+  });
+
   return {
     props: {
       contacts: contacts.items,
       logo: logo.items[0].fields,
       banner: banner.items[0].fields,
       socials: socials.items,
+      merch: merch.items,
     },
   };
 };

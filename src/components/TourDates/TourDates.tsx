@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
-import InnerHTML from "dangerously-set-html-content";
+import React, { useEffect, useRef, useState } from 'react';
+import ClipLoader from 'react-spinners/ClipLoader';
+import InnerHTML from 'dangerously-set-html-content';
 
-import useStyles from "./TourDates.styles";
+import useStyles from './TourDates.styles';
 
 const TourDates = () => {
   const [height, setHeight] = useState(0);
