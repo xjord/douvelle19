@@ -7,17 +7,17 @@ const nextConfig = {
   },
   compilerOptions: {
     paths: {
-      "_assets/*": ["./src/assets/*"],
-      "_constants/*": ["./src/constants/*"],
-      "_components/*": ["./src/components/*"],
-      "_styles/*": ["./styles/*"],
-      "_utils/*": ["./src/utils/*"],
-      "_models/*": ["./src/models/*"],
-      "_src/*": ["./src/*"],
+      '_assets/*': ['./src/assets/*'],
+      '_constants/*': ['./src/constants/*'],
+      '_components/*': ['./src/components/*'],
+      '_styles/*': ['./styles/*'],
+      '_utils/*': ['./src/utils/*'],
+      '_models/*': ['./src/models/*'],
+      '_src/*': ['./src/*'],
     },
   },
   images: {
-    domains: ["images.ctfassets.net"],
+    domains: ['images.ctfassets.net', 'img.youtube.com'],
   },
 };
 

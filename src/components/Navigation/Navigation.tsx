@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
 
 import { ITourDates } from '../../models/index';
-import { openInTab } from '../../utils/helpers';
 import Banner from '../Banner';
 import Music from '../Music';
+import Videos from '../Videos';
 import TourDates from '../TourDates';
 import MailingList from '../MailingList';
 import Contact from '../Contact';
@@ -15,6 +15,7 @@ export enum Tabs {
   Home = 'home',
   Dates = 'dates',
   Music = 'music',
+  Videos = 'videos',
   Merch = 'merch',
   Contact = 'contact',
   MailingList = 'mailing list',
@@ -26,11 +27,11 @@ interface NavigationProps {
 
 const Navigation = (props: NavigationProps) => {
   const { data } = props;
-  const { banner, contacts, merch } = data;
+  const { banner, contacts, merch, videos } = data;
 
   const [tabIndex, setTabIndex] = useState<Tabs>(Tabs.Home);
 
-  const tabs = [Tabs.Home, Tabs.Music, Tabs.Dates, Tabs.Merch, Tabs.MailingList, Tabs.Contact];
+  const tabs = [Tabs.Home, Tabs.Music, Tabs.Videos, Tabs.Dates, Tabs.Merch, Tabs.MailingList, Tabs.Contact];
 
   const tabSelect = (index: Tabs) => setTabIndex(index);
 
@@ -38,6 +39,7 @@ const Navigation = (props: NavigationProps) => {
     if (tabIndex === Tabs.Home) return <Banner banner={banner} />;
     if (tabIndex === Tabs.Dates) return <TourDates />;
     if (tabIndex === Tabs.Music) return <Music />;
+    if (tabIndex === Tabs.Videos) return <Videos videos={videos} />;
     if (tabIndex === Tabs.Merch) return <Merch merch={merch} />;
     if (tabIndex === Tabs.MailingList) return <MailingList />;
     if (tabIndex === Tabs.Contact) return <Contact contacts={contacts} />;

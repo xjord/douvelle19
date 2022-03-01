@@ -37,6 +37,14 @@ export const getStaticProps = async () => {
     content_type: 'merch',
   });
 
+  const primaryColour = await client.getEntries({
+    content_type: 'primaryColour',
+  });
+
+  const videos = await client.getEntries({
+    content_type: 'video',
+  });
+
   return {
     props: {
       contacts: contacts.items,
@@ -44,6 +52,7 @@ export const getStaticProps = async () => {
       banner: banner.items[0].fields,
       socials: socials.items,
       merch: merch.items,
+      videos: videos.items,
     },
   };
 };
