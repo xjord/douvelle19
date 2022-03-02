@@ -75,6 +75,7 @@ const useStyles = createUseStyles({
     borderColor: 'white',
     borderStyle: 'solid',
     borderRadius: 4,
+    backgroundColor: 'black',
     boxShadow: {
       x: -4,
       y: -4,
