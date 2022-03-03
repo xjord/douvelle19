@@ -9,7 +9,9 @@ const useStyles = createUseStyles({
     color: 'white',
     fontSize: 18,
     width: '100%',
-    maxWidth: '60%',
+    '@media (min-width: 759px)': {
+      maxWidth: '60%',
+    },
   },
   contactWrapper: {
     display: 'flex',
