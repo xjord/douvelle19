@@ -12,6 +12,11 @@ const useStyles = createUseStyles({
     display: 'flex',
     justifyContent: 'center',
     color: 'white',
+    '@media (max-width: 759px)': {
+      flexDirection: 'column',
+      alignContent: 'center',
+      alignItems: 'center',
+    },
   },
   bannerImageWrapper: {
     marginRight: 100,
@@ -22,6 +27,9 @@ const useStyles = createUseStyles({
       y: -4,
       blur: 16,
       color: '#000000',
+    },
+    '@media (max-width: 759px)': {
+      marginRight: 0,
     },
   },
   bannerImage: {
@@ -38,6 +46,16 @@ const useStyles = createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    '@media (max-width: 759px)': {
+      width: '100%',
+    },
+  },
+  bannerInfo: {
+    '@media (max-width: 759px)': {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
   },
   bannerOutNow: {
     fontSize: 22,

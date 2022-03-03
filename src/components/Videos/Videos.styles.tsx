@@ -8,13 +8,14 @@ const useStyles = createUseStyles({
   },
   videoBackgroundOpacity: {
     position: 'absolute',
+    display: 'flex',
     opacity: 0.7,
     backgroundColor: '#111111',
     top: 0,
     bottom: 0,
-    width: '100%',
-    height: '100%',
     zIndex: 998,
+    width: '100%',
+    height: '100vh',
   },
   video: {
     display: 'flex',
@@ -22,7 +23,6 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     position: 'relative',
     marginTop: 24,
-    cursor: 'pointer',
   },
   videoPlayIconWrapper: {
     display: 'flex',
@@ -64,6 +64,7 @@ const useStyles = createUseStyles({
     justifyContent: 'flex-end',
     width: '100%',
     marginBottom: 20,
+    cursor: 'pointer',
   },
   videoModalClose: {
     width: 20,
@@ -76,6 +77,7 @@ const useStyles = createUseStyles({
     borderStyle: 'solid',
     borderRadius: 4,
     backgroundColor: 'black',
+    cursor: 'pointer',
     boxShadow: {
       x: -4,
       y: -4,

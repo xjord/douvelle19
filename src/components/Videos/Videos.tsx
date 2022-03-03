@@ -26,7 +26,6 @@ const Music = (props) => {
               <div className={classes.videoPlayIconWrapper}>
                 <FontAwesomeIcon className={classes.videoPlayIcon} icon={faPlay} />
               </div>
-              {/* <YouTube videoId={link} /> */}
               <Image className={classes.videoThumbnail} height={400} width={640} src={thumbnail} alt={thumbnail} />
             </div>
           );

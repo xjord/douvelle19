@@ -1,21 +1,24 @@
-import { createUseStyles } from "react-jss";
+import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   socialWrapper: {
-    position: "absolute",
+    position: 'absolute',
     top: 17,
     right: 24,
-    display: "flex",
-    justifyContent: "center",
+    display: 'flex',
+    justifyContent: 'center',
     zIndex: 9999,
-    color: "white",
+    color: 'white',
+    '@media (max-width: 759px)': {
+      display: 'none',
+    },
   },
   socialIcon: {
     width: 16,
     height: 16,
     marginRight: 8,
-    cursor: "pointer",
-    "&:hover": {
+    cursor: 'pointer',
+    '&:hover': {
       opacity: 0.8,
     },
   },

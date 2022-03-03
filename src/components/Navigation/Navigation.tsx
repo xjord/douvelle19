@@ -1,4 +1,6 @@
 import React, { useState, useMemo } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { ITourDates } from '../../models/index';
 import Banner from '../Banner';
@@ -30,6 +32,9 @@ const Navigation = (props: NavigationProps) => {
   const { banner, contacts, merch, videos } = data;
 
   const [tabIndex, setTabIndex] = useState<Tabs>(Tabs.Home);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  console.log(mobileMenuOpen, 'mobileMenuOpen navifation');
 
   const tabs = [Tabs.Home, Tabs.Music, Tabs.Videos, Tabs.Dates, Tabs.Merch, Tabs.MailingList, Tabs.Contact];
 
@@ -49,7 +54,12 @@ const Navigation = (props: NavigationProps) => {
 
   return (
     <div className={classes.navigation}>
-      <NavigationTabs currentTab={tabIndex} tabs={tabs} onPress={tabSelect} />
+      <FontAwesomeIcon
+        className={classes.navigationHamburger}
+        icon={mobileMenuOpen ? faCircleXmark : faBars}
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      />
+      <NavigationTabs currentTab={tabIndex} tabs={tabs} onPress={tabSelect} mobileMenuOpen={mobileMenuOpen} />
       <div className={classes.navigationData}>{tabData}</div>
     </div>
   );

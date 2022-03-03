@@ -26,8 +26,10 @@ const Home = ({ banner }) => {
           />
         </div>
         <div className={classes.bannerText}>
-          <div className={classes.bannerTitle}>{releaseTitle}</div>
-          <div className={classes.bannerOutNow}>OUT NOW</div>
+          <div className={classes.bannerInfo}>
+            <div className={classes.bannerTitle}>{releaseTitle}</div>
+            <div className={classes.bannerOutNow}>OUT NOW</div>
+          </div>
           <div className={classes.bannerButtonWrapper}>
             <Button onClick={() => openInTab(releaseLink)}>Stream/Purchase</Button>
           </div>
