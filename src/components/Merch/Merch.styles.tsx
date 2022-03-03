@@ -48,14 +48,23 @@ const useStyles = createUseStyles({
     '&:hover': {
       color: '#AEAEAE',
     },
+    '@media (max-width: 759px)': {
+      fontSize: 14,
+    },
   },
   merchOutOfStock: {
     color: 'red',
     fontSize: 16,
+    '@media (max-width: 759px)': {
+      fontSize: 14,
+    },
   },
   merchPrice: {
     fontSize: 16,
     color: '#AEAEAE',
+    '@media (max-width: 759px)': {
+      fontSize: 14,
+    },
   },
 });
 

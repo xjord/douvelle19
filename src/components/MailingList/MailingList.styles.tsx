@@ -2,8 +2,8 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   mailingList: {
-    paddingLeft: '20%',
-    paddingRight: '20%',
+    maxWidth: 654,
+    width: '100%',
   },
 });
 

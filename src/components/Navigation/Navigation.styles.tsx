@@ -7,8 +7,6 @@ const useStyles = createUseStyles({
     justifyContent: 'center',
     alignItems: 'center',
     color: 'white',
-    paddingLeft: '10%',
-    paddingRight: '10%',
   },
   navigationHamburger: {
     position: 'absolute',
@@ -26,9 +24,12 @@ const useStyles = createUseStyles({
     },
   },
   navigationData: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
     width: '100%',
     height: '100%',
-    marginTop: '5vh',
+    marginTop: '10vh',
   },
 });
 

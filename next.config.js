@@ -15,6 +15,7 @@ const nextConfig = {
       '_models/*': ['./src/models/*'],
       '_src/*': ['./src/*'],
     },
+    styledComponents: true,
   },
   images: {
     domains: ['images.ctfassets.net', 'img.youtube.com'],

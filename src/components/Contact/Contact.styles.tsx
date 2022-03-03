@@ -8,8 +8,8 @@ const useStyles = createUseStyles({
     alignItems: 'center',
     color: 'white',
     fontSize: 18,
-    paddingLeft: '20%',
-    paddingRight: '20%',
+    width: '100%',
+    maxWidth: '60%',
   },
   contactWrapper: {
     display: 'flex',

@@ -7,8 +7,7 @@ const useStyles = (props) =>
       justifyContent: 'space-between',
       color: 'white',
       width: '100%',
-      paddingLeft: '30%',
-      paddingRight: '30%',
+      maxWidth: 654,
       '@media (max-width: 759px)': {
         display: 'none',
         ...(props.mobileMenuOpen && {

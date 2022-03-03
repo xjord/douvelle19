@@ -35,10 +35,11 @@ const Socials = ({ socials }) => {
       {socials.reverse().map((social, index) => {
         const link = social?.fields?.link;
         const type = social?.fields?.type;
+        const icon = SocialIcons[type];
 
         return (
-          <div key={index} className={classes.socialIcon}>
-            <FontAwesomeIcon icon={SocialIcons[type]} onClick={() => openSocial(link)} />
+          <div key={`${index}-${social}`} className={classes.socialIcon}>
+            <FontAwesomeIcon icon={icon} onClick={() => openSocial(link)} />
           </div>
         );
       })}

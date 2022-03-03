@@ -34,8 +34,6 @@ const Navigation = (props: NavigationProps) => {
   const [tabIndex, setTabIndex] = useState<Tabs>(Tabs.Home);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  console.log(mobileMenuOpen, 'mobileMenuOpen navifation');
-
   const tabs = [Tabs.Home, Tabs.Music, Tabs.Videos, Tabs.Dates, Tabs.Merch, Tabs.MailingList, Tabs.Contact];
 
   const tabSelect = (index: Tabs) => setTabIndex(index);

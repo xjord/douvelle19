@@ -12,15 +12,24 @@ const useStyles = createUseStyles({
     borderRadius: 8,
     paddingTop: '3%',
     paddingBottom: '3%',
+    paddingLeft: '10%',
+    paddingRight: '10%',
   },
   formTitle: {
+    width: '100%',
+    maxWidth: 500,
     textAlign: 'center',
-    width: '50%',
     marginBottom: '5%',
   },
-  form: {},
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+  },
   formButtonWrapper: {
-    marginTop: '5%',
+    marginTop: '10%',
   },
 });
 
