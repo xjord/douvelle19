@@ -44,7 +44,7 @@ const Music = (props) => {
             <iframe
               width="100%"
               height="506"
-              src={`https://www.youtube.com/embed/${modalVideo}`}
+              src={`https://www.youtube.com/embed/${modalVideo}?autoplay=1`}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />

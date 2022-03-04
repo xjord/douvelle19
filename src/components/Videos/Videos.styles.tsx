@@ -51,6 +51,8 @@ const useStyles = createUseStyles({
   },
   videoThumbnail: {
     borderRadius: 8,
+    backgroundColor: 'black',
+    width: '100%',
   },
   videoModal: {
     position: 'fixed',
