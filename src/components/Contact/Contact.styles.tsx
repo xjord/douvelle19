@@ -22,12 +22,20 @@ const useStyles = createUseStyles({
     borderRadius: 8,
     width: '100%',
     marginBottom: 24,
+    '@media (max-width: 759px)': {
+      flexDirection: 'column',
+    },
   },
   contactInfo: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     height: 48,
+    '@media (max-width: 759px)': {
+      height: 'auto',
+      textAlign: 'center',
+      marginBottom: 12,
+    },
   },
   contactTitle: {
     color: '#AEAEAE',
