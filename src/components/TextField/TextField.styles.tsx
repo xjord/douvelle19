@@ -6,20 +6,19 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 70,
+    height: 90,
     marginBottom: 32,
     width: '100%',
+    maxWidth: 500,
   },
   textFieldLabel: {
     width: '100%',
-    maxWidth: 500,
     textAlign: 'left',
     minHeight: 20,
     marginBottom: 8,
   },
   textFieldInput: {
     width: '100%',
-    maxWidth: 500,
     backgroundColor: '#373737',
     color: '#AEAEAE',
     borderRadius: 4,
@@ -30,6 +29,14 @@ const useStyles = createUseStyles({
     '&:focus': {
       outline: 'none',
     },
+  },
+  textFieldErrorMessage: {
+    fontSize: 14,
+    marginTop: 8,
+    minHeight: 24,
+    width: '100%',
+    textAlign: 'left',
+    color: '#ffb6c1',
   },
 });
 

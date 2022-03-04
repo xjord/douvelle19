@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import useStyles from "./TextField.styles";
+import useStyles from './TextField.styles';
 
 const TextField = (props) => {
-  const { label, onChange, value, type, placeholder } = props;
+  const { label, onChange, value, type, placeholder, errorMessage } = props;
 
   const classes = useStyles();
 
@@ -17,6 +17,7 @@ const TextField = (props) => {
         type={type}
         placeholder={placeholder}
       />
+      <div className={classes.textFieldErrorMessage}>{errorMessage}</div>
     </div>
   );
 };

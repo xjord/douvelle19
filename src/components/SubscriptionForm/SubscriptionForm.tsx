@@ -1,10 +1,16 @@
 import React, { useMemo, useState } from 'react';
+import InnerHTML from 'dangerously-set-html-content';
 
 import Button from '../Button';
 import TextField from '../TextField';
+import { requiredValidation, emailValidation, nameValidation, phoneValidation } from '../../utils/validation';
+import { useFormValidation } from '../../utils/helpers';
+import { FormValidationInput } from '../../models/index';
 import useStyles from './SubscriptionForm.styles';
 
-const SubscriptionForm = ({ status, message, onValidated }) => {
+const SubscriptionForm = (props) => {
+  const { status, message, onValidated } = props;
+
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -13,70 +19,100 @@ const SubscriptionForm = ({ status, message, onValidated }) => {
   const isLoading = useMemo(() => status === 'sending', [status]);
   const subscribed = useMemo(() => status === 'success', [status]);
 
-  //   message
+  const formValidation = useFormValidation(SUBSCRIPTION_VALIDATION(email, firstName, lastName, phoneNumber));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    email &&
-      firstName &&
-      lastName &&
-      phoneNumber &&
-      email.indexOf('@') > -1 &&
-      onValidated({
-        EMAIL: email,
-        MERGE1: firstName,
-        MERGE2: lastName,
-        MERGE4: phoneNumber,
-      });
+  const submitForm = (email, firstName, lastName, phoneNumber) => {
+    if (!formValidation.validate()) return;
+
+    onValidated({
+      EMAIL: email,
+      MERGE1: firstName,
+      MERGE2: lastName,
+      MERGE4: phoneNumber,
+    });
   };
 
-  const classes = useStyles();
+  const classes = useStyles({ subscribed });
 
   return (
-    <form className={classes.formWrapper} onSubmit={(e) => handleSubmit(e)}>
-      <h3 className={classes.formTitle}>Sign up for the latest news on releases, edits, tour dates and more.</h3>
-      <div className={classes.form}>
+    <form className={classes().formWrapper}>
+      <h3 className={classes().formTitle}>Sign up for the latest news on releases, edits, tour dates and more.</h3>
+      <div className={classes().form}>
         <TextField
           label="Email address"
           placeholder="Email address here..."
           onChange={setEmail}
-          type="email"
           value={email}
+          errorMessage={formValidation.email}
         />
-
         <TextField
           label="First name"
           placeholder="First name here..."
           onChange={setFirstName}
           type="text"
           value={firstName}
+          errorMessage={formValidation.firstName}
         />
-
         <TextField
           label="Last name"
           placeholder="Last name here..."
           onChange={setLastName}
           type="text"
           value={lastName}
-          isRequired
+          errorMessage={formValidation.lastName}
         />
-
         <TextField
           label="Phone number"
           placeholder="Phone number here..."
           onChange={setPhoneNumber}
           type="text"
           value={phoneNumber}
-          isRequired
+          errorMessage={formValidation.phoneNumber}
         />
       </div>
-
-      <div className={classes.formButtonWrapper}>
-        <Button>Submit</Button>
+      <div>
+        <Button
+          isLoading={isLoading}
+          width={222}
+          disabled={subscribed}
+          onClick={() => submitForm(email, firstName, lastName, phoneNumber)}
+        >
+          {subscribed ? 'Subscribed!' : 'Subscribe'}
+        </Button>
       </div>
-      {/* <input label="subscribe" type="submit" formValues={[email, firstName, lastName, phoneNumber]} /> */}
+      <div className={classes().formMessage}>
+        <InnerHTML html={subscribed ? '' : message} />
+      </div>
     </form>
   );
 };
 
 export default SubscriptionForm;
+
+const SUBSCRIPTION_VALIDATION = (
+  email: string,
+  firstName: string,
+  lastName: string,
+  phoneNumber: string,
+): FormValidationInput[] => [
+  {
+    key: 'email',
+    value: email,
+    validations: [requiredValidation, emailValidation],
+  },
+  {
+    key: 'firstName',
+    value: firstName,
+    validations: [requiredValidation, nameValidation],
+  },
+  {
+    key: 'lastName',
+    value: lastName,
+    validations: [requiredValidation, nameValidation],
+  },
+  {
+    key: 'phoneNumber',
+    value: phoneNumber,
+    validations: [requiredValidation, phoneValidation],
+  },
+];

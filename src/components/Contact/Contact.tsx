@@ -16,12 +16,10 @@ const Contact = ({ contacts }) => {
           <div key={index} className={classes.contactWrapper}>
             <div className={classes.contactInfo}>
               <div className={classes.contactTitle}>{title}</div>
-              <div className={classes.contactLink} onClick={() => openEmail(emailAddress)}>
-                {name}
-              </div>
+              <div className={classes.contactLink}>{name}</div>
             </div>
             <div className={classes.contactButtonWrapper}>
-              <Button>Email</Button>
+              <Button onClick={() => openEmail(emailAddress)}>Email</Button>
             </div>
           </div>
         );

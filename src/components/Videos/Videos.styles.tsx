@@ -56,7 +56,7 @@ const useStyles = createUseStyles({
     borderRadius: 8,
     position: 'absolute',
     zIndex: 999,
-    width: '50%',
+    width: '100%',
     maxWidth: 900,
   },
   videoModalCloseWrapper: {

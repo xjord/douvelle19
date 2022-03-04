@@ -4,13 +4,17 @@ const useStyles = createUseStyles({
   bannerWrapper: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
     width: '100%',
+    paddingLeft: '5%',
+    paddingRight: '5%',
   },
   banner: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    maxWidth: 800,
     color: 'white',
     '@media (max-width: 759px)': {
       flexDirection: 'column',
@@ -19,7 +23,6 @@ const useStyles = createUseStyles({
     },
   },
   bannerImageWrapper: {
-    marginRight: 100,
     cursor: 'pointer',
     borderRadius: 8,
     boxShadow: {
