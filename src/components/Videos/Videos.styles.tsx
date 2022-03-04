@@ -7,7 +7,7 @@ const useStyles = createUseStyles({
     alignItems: 'center',
   },
   videoBackgroundOpacity: {
-    position: 'absolute',
+    position: 'fixed',
     display: 'flex',
     opacity: 0.7,
     backgroundColor: '#111111',
@@ -53,8 +53,10 @@ const useStyles = createUseStyles({
     borderRadius: 8,
   },
   videoModal: {
-    borderRadius: 8,
-    position: 'absolute',
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
     zIndex: 999,
     width: '100%',
     maxWidth: 900,
