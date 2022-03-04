@@ -30,6 +30,9 @@ const useStyles = createUseStyles({
     width: '100%',
     height: '100%',
     marginTop: '10vh',
+    '@media (max-width: 759px)': {
+      marginTop: '2vh',
+    },
   },
 });
 
