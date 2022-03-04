@@ -43,6 +43,10 @@ const useStyles = createUseStyles({
   contactLink: {
     fontWeight: '600',
   },
+  contactButtonWrapper: {
+    width: '100%',
+    maxWidth: 200,
+  },
 });
 
 export default useStyles;

@@ -10,7 +10,6 @@ const useStyles = createUseStyles({
     paddingLeft: 30,
     paddingRight: 30,
     width: '100%',
-    maxWidth: 200,
     fontSize: 16,
     fontWeight: '500',
     borderColor: 'white',

@@ -20,7 +20,9 @@ const Contact = ({ contacts }) => {
                 {name}
               </div>
             </div>
-            <Button>Email</Button>
+            <div className={classes.contactButtonWrapper}>
+              <Button>Email</Button>
+            </div>
           </div>
         );
       })}
