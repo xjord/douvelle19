@@ -1,7 +1,9 @@
-import { createUseStyles } from 'react-jss';
+// import { createUseStyles } from 'react-jss';
 
-const useStyles = (props) =>
-  createUseStyles({
+const useStyles = (props) => {
+  console.log(props.mobileMenuOpen);
+
+  return createUseStyles({
     navigationTabs: {
       display: 'flex',
       justifyContent: 'space-between',
@@ -9,18 +11,19 @@ const useStyles = (props) =>
       width: '100%',
       maxWidth: 654,
       '@media (max-width: 759px)': {
-        display: 'none',
-        ...(props.mobileMenuOpen && {
-          display: 'flex',
-          backgroundColor: 'black',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          paddingTop: '20vh',
-          position: 'absolute',
-          height: '100%',
-          top: 0,
-          zIndex: 1000,
-        }),
+        display: props.mobileMenuOpen ? 'flex' : 'none',
+        backgroundColor: 'pink',
+        // ...(props.mobileMenuOpen ? {
+        // display: 'flex',
+        backgroundColor: 'black',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        paddingTop: '20vh',
+        position: 'absolute',
+        height: '100%',
+        top: 0,
+        zIndex: 1000,
+        // }),
       },
     },
     tab: {
@@ -37,5 +40,6 @@ const useStyles = (props) =>
       },
     },
   });
+};
 
 export default useStyles;

@@ -1,4 +1,4 @@
-import { createUseStyles } from 'react-jss';
+// import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
   videos: {
@@ -43,6 +43,9 @@ const useStyles = createUseStyles({
       y: -4,
       blur: 16,
       color: '#000000',
+    },
+    '&:hover': {
+      transform: 'scale(1.1)',
     },
   },
   videoPlayIcon: {

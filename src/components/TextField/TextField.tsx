@@ -1,11 +1,11 @@
 import React from 'react';
 
-import useStyles from './TextField.styles';
+// import useStyles from './TextField.styles';
 
 const TextField = (props) => {
   const { label, onChange, value, type, placeholder, errorMessage } = props;
 
-  const classes = useStyles();
+  const classes = {};
 
   return (
     <div className={classes.textField}>

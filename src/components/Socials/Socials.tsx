@@ -12,7 +12,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import { openInTab } from '../../utils/helpers';
-import useStyles from './Socials.styles';
+import { SocialWrapper, SocialLogo } from './Socials.styles';
 
 const Socials = ({ socials }) => {
   const openSocial = (link: string) => openInTab(link);
@@ -28,22 +28,20 @@ const Socials = ({ socials }) => {
     Apple: faItunes,
   };
 
-  const classes = useStyles();
-
   return (
-    <div className={classes.socialWrapper}>
+    <SocialWrapper>
       {socials.reverse().map((social, index) => {
         const link = social?.fields?.link;
         const type = social?.fields?.type;
         const icon = SocialIcons[type];
 
         return (
-          <div key={`${index}-${social}`} className={classes.socialIcon}>
+          <SocialLogo key={`${index}-${social}`}>
             <FontAwesomeIcon icon={icon} onClick={() => openSocial(link)} />
-          </div>
+          </SocialLogo>
         );
       })}
-    </div>
+    </SocialWrapper>
   );
 };
 

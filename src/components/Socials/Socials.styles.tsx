@@ -1,27 +1,28 @@
-import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
-const useStyles = createUseStyles({
-  socialWrapper: {
-    position: 'absolute',
-    top: 17,
-    right: 24,
-    display: 'flex',
-    justifyContent: 'center',
-    zIndex: 9999,
-    color: 'white',
-    '@media (max-width: 759px)': {
-      display: 'none',
-    },
-  },
-  socialIcon: {
-    width: 16,
-    height: 16,
-    marginRight: 8,
-    cursor: 'pointer',
-    '&:hover': {
-      opacity: 0.8,
-    },
-  },
-});
+const SocialWrapper = styled.div`
+  position: absolute;
+  top: 17px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+  color: white;
 
-export default useStyles;
+  @media screen and (max-width: 759px) {
+    display: none;
+  }
+`;
+
+const SocialLogo = styled.div`
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+export { SocialWrapper, SocialLogo };

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import { openInTab } from '../../utils/helpers';
-import useStyles from './Merch.styles';
+// import useStyles from './Merch.styles';
 
 enum MerchStatus {
   InStock = 'In Stock',
@@ -10,7 +10,7 @@ enum MerchStatus {
 }
 
 const Merch = ({ merch }) => {
-  const classes = useStyles();
+  const classes = {};
 
   return (
     <div className={classes.merch}>

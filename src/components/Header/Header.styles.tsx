@@ -1,18 +1,17 @@
-import { createUseStyles } from "react-jss";
+import styled from 'styled-components';
 
-const useStyles = createUseStyles({
-  header: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: 10 + "2vmin",
-    color: "white",
-    padding: 50,
-  },
-  headerLogo: {
-    height: "20vmin",
-  },
-});
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: (10px + 2vmin);
+  color: white;
+  padding: 50px;
+`;
 
-export default useStyles;
+const HeaderLogo = styled.div`
+  height: 20vmin;
+`;
+
+export { HeaderWrapper, HeaderLogo };

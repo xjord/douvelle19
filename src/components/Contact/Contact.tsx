@@ -2,10 +2,10 @@ import React from 'react';
 
 import { openEmail } from '../../utils/helpers';
 import Button from '../Button';
-import useStyles from './Contact.styles';
+// import useStyles from './Contact.styles';
 
 const Contact = ({ contacts }) => {
-  const classes = useStyles();
+  const classes = {};
 
   return (
     <div className={classes.contact}>

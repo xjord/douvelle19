@@ -9,9 +9,9 @@ import Videos from '../Videos';
 import TourDates from '../TourDates';
 import MailingList from '../MailingList';
 import Contact from '../Contact';
-import useStyles from './Navigation.styles';
 import NavigationTabs from '../NavigationTabs';
 import Merch from '../Merch';
+import { NavigationWrapper, NavigationHamburger, NavigationData } from './Navigation.styles';
 
 export enum Tabs {
   Home = 'home',
@@ -48,18 +48,19 @@ const Navigation = (props: NavigationProps) => {
     if (tabIndex === Tabs.Contact) return <Contact contacts={contacts} />;
   }, [tabIndex]);
 
-  const classes = useStyles();
+  const classes = {};
 
   return (
-    <div className={classes.navigation}>
-      <FontAwesomeIcon
-        className={classes.navigationHamburger}
-        icon={mobileMenuOpen ? faCircleXmark : faBars}
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      />
+    <NavigationWrapper>
+      <NavigationHamburger>
+        <FontAwesomeIcon
+          icon={mobileMenuOpen ? faCircleXmark : faBars}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        />
+      </NavigationHamburger>
       <NavigationTabs currentTab={tabIndex} tabs={tabs} onPress={tabSelect} mobileMenuOpen={mobileMenuOpen} />
-      <div className={classes.navigationData}>{tabData}</div>
-    </div>
+      <NavigationData>{tabData}</NavigationData>
+    </NavigationWrapper>
   );
 };
 

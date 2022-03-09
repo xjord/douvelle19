@@ -71,8 +71,8 @@ const Home = (props: NextPageProps) => {
         <meta name="description" content="Douvelle19 music producer and dj" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Socials socials={socials} />
       <Header logo={logo} />
+      <Socials socials={socials} />
       <Navigation data={props} />
     </div>
   );

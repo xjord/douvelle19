@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { faPlay, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import useStyles from './Videos.styles';
+// import useStyles from './Videos.styles';
 
 const Music = (props) => {
   const { videos } = props;
@@ -11,7 +11,7 @@ const Music = (props) => {
   const [modalVideo, setModalVideo] = useState('');
   const modalOpen = useMemo(() => modalVideo !== '', [modalVideo]);
 
-  const classes = useStyles();
+  const classes = {};
 
   return (
     <div className={classes.videos}>
