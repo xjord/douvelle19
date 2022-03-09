@@ -2,29 +2,34 @@ import React from 'react';
 
 import { openEmail } from '../../utils/helpers';
 import Button from '../Button';
-// import useStyles from './Contact.styles';
+import {
+  ContactWrapper,
+  ContactItem,
+  ContactInfo,
+  ContactTitle,
+  ContactLink,
+  ContactButtonWrapper,
+} from './Contact.styles';
 
 const Contact = ({ contacts }) => {
-  const classes = {};
-
   return (
-    <div className={classes.contact}>
+    <ContactWrapper>
       {contacts.map((contact, index) => {
         const { title, name, emailAddress } = contact?.fields;
 
         return (
-          <div key={index} className={classes.contactWrapper}>
-            <div className={classes.contactInfo}>
-              <div className={classes.contactTitle}>{title}</div>
-              <div className={classes.contactLink}>{name}</div>
-            </div>
-            <div className={classes.contactButtonWrapper}>
+          <ContactItem key={index}>
+            <ContactInfo>
+              <ContactTitle>{title}</ContactTitle>
+              <ContactLink>{name}</ContactLink>
+            </ContactInfo>
+            <ContactButtonWrapper>
               <Button onClick={() => openEmail(emailAddress)}>Email</Button>
-            </div>
-          </div>
+            </ContactButtonWrapper>
+          </ContactItem>
         );
       })}
-    </div>
+    </ContactWrapper>
   );
 };
 

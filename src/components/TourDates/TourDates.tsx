@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import InnerHTML from 'dangerously-set-html-content';
 
-import useStyles from './TourDates.styles';
+import { TourDate, TourDateLoading, TourDateWidget } from './TourDates.styles';
 
 const TourDates = () => {
   const [height, setHeight] = useState(0);
@@ -18,17 +18,15 @@ const TourDates = () => {
 
   const tourDatesLoaded = true;
 
-  const classes = useStyles(tourDatesLoaded);
-
   return (
-    <div ref={tourDateRef} className={classes().tourDate}>
-      <div className={classes().tourDateLoading}>
+    <TourDate ref={tourDateRef}>
+      <TourDateLoading>
         <ClipLoader size={40} color="white" />
-      </div>
-      <div className={classes().tourDateWidget}>
+      </TourDateLoading>
+      <TourDateWidget>
         <InnerHTML html={songKickWidget} />
-      </div>
-    </div>
+      </TourDateWidget>
+    </TourDate>
   );
 };
 

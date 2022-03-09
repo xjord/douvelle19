@@ -1,41 +1,40 @@
-// import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
-const useStyles = ({ subscribed }) =>
-  createUseStyles({
-    formWrapper: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      color: 'white',
-      width: '100%',
-      backgroundColor: 'black',
-      borderRadius: 8,
-      paddingTop: '3%',
-      paddingBottom: '3%',
-      paddingLeft: '10%',
-      paddingRight: '10%',
-    },
-    formTitle: {
-      width: '100%',
-      maxWidth: 500,
-      textAlign: 'center',
-      marginBottom: '5%',
-    },
-    form: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
-    },
-    formMessage: {
-      textAlign: 'center',
-      fontSize: 14,
-      maxWidth: 450,
-      color: subscribed ? '#ffb6c1' : 'white',
-      marginTop: 28,
-    },
-  });
+const FormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  flew-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  background-color: black;
+  border-radius: 8px;
+  padding: 3% 10%;
+`;
 
-export default useStyles;
+const FormTitle = styled.div`
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 5%;
+`;
+
+const Form = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
+
+const FormMessage = styled.div`
+  text-align: center;
+  font-size: 14px;
+  max-width: 450px;
+  color: white;
+  // color: subscribed ? '#ffb6c1' : 'white',
+  margin-top: 28px;
+`;
+
+export { FormWrapper, FormTitle, Form, FormMessage };

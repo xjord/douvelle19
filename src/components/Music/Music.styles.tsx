@@ -1,31 +1,33 @@
-// import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
-const useStyles = createUseStyles({
-  music: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    maxWidth: '80%',
-  },
-  musicSpotifyWrapper: {
-    display: 'flex',
-    alignContent: 'center',
-    justifyContent: 'center',
-    marginBottom: '5%',
-  },
-  musicSpotify: {
-    width: '50%',
-  },
-  musicSoundcloudWrapper: {
-    display: 'flex',
-    width: '100%',
-    justifyContent: 'space-between',
-  },
-  musicSoundcloud: {
-    width: '30%',
-  },
-});
+const MusicWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+`;
 
-export default useStyles;
+const MusicSpotifyWrapper = styled.form`
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 5%;
+`;
+
+const MusicSpotify = styled.form`
+  width: 50%;
+`;
+
+const MusicSoundcloudWrapper = styled.form`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+`;
+
+const MusicSoundcloud = styled.form`
+  width: 30%;
+`;
+
+export { MusicWrapper, MusicSpotifyWrapper, MusicSpotify, MusicSoundcloudWrapper, MusicSoundcloud };

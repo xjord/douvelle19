@@ -1,10 +1,8 @@
-// import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
-const useStyles = createUseStyles({
-  mailingList: {
-    maxWidth: 654,
-    width: '100%',
-  },
-});
+const MailingListWrapper = styled.div`
+  width: 100%;
+  max-width: 654px;
+`;
 
-export default useStyles;
+export { MailingListWrapper };

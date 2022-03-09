@@ -1,45 +1,41 @@
-// import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
-const useStyles = (props) => {
-  console.log(props.mobileMenuOpen);
+const NavigationTabsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+  max-width: 654px;
 
-  return createUseStyles({
-    navigationTabs: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      color: 'white',
-      width: '100%',
-      maxWidth: 654,
-      '@media (max-width: 759px)': {
-        display: props.mobileMenuOpen ? 'flex' : 'none',
-        backgroundColor: 'pink',
-        // ...(props.mobileMenuOpen ? {
-        // display: 'flex',
-        backgroundColor: 'black',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        paddingTop: '20vh',
-        position: 'absolute',
-        height: '100%',
-        top: 0,
-        zIndex: 1000,
-        // }),
-      },
-    },
-    tab: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      cursor: 'pointer',
-      '@media (max-width: 759px)': {
-        padding: 14,
-      },
-      '&:hover': {
-        opacity: 0.8,
-      },
-    },
-  });
-};
+  @media screen and (max-width: 759px) {
+    // display: props.mobileMenuOpen ? 'flex' : 'none',
+    // background-color: pink;
+    // // ...(props.mobileMenuOpen ? {
+    // // display: 'flex',
+    // backgroundColor: 'black',
+    // flexDirection: 'column',
+    // justifyContent: 'flex-start',
+    // paddingTop: '20vh',
+    // position: 'absolute',
+    // height: '100%',
+    // top: 0,
+    // zIndex: 1000,
+  }
+`;
 
-export default useStyles;
+const NavigationTab = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-ttems: center;
+  cursor: pointer;
+
+  @media screen and (max-width: 759px) {
+    padding: 14px;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+export { NavigationTabsWrapper, NavigationTab };

@@ -1,52 +1,58 @@
-// import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
-const useStyles = createUseStyles({
-  contact: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: 'white',
-    fontSize: 18,
-    width: '100%',
-    '@media (min-width: 759px)': {
-      maxWidth: '60%',
-    },
-  },
-  contactWrapper: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: 'black',
-    padding: 32,
-    borderRadius: 8,
-    width: '100%',
-    marginBottom: 24,
-    '@media (max-width: 759px)': {
-      flexDirection: 'column',
-    },
-  },
-  contactInfo: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    height: 48,
-    '@media (max-width: 759px)': {
-      height: 'auto',
-      textAlign: 'center',
-      marginBottom: 12,
-    },
-  },
-  contactTitle: {
-    color: '#AEAEAE',
-  },
-  contactLink: {
-    fontWeight: '600',
-  },
-  contactButtonWrapper: {
-    width: '100%',
-    maxWidth: 200,
-  },
-});
+const ContactWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  font-size: 18px;
 
-export default useStyles;
+  @media screen and (max-width: 759px) {
+    max-width: 60%;
+  }
+`;
+
+const ContactItem = styled.form`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  width: 100%;
+  padding: 32px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+
+  @media screen and (max-width: 759px) {
+    flex-direction: column;
+  }
+`;
+
+const ContactInfo = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 48px;
+
+  @media screen and (max-width: 759px) {
+    height: auto;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+`;
+
+const ContactTitle = styled.form`
+  color: #aeaeae;
+`;
+
+const ContactLink = styled.form`
+  font-weight: 600;
+`;
+
+const ContactButtonWrapper = styled.form`
+  width: 100%;
+  max-width: 200px;
+`;
+
+export { ContactWrapper, ContactItem, ContactInfo, ContactTitle, ContactLink, ContactButtonWrapper };

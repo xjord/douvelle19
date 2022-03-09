@@ -1,71 +1,76 @@
-// import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
-const useStyles = createUseStyles({
-  merch: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: 'white',
-    fontSize: 18,
-    paddingLeft: '10%',
-    paddingRight: '10%',
-  },
-  merchWrapper: {
-    flex: '1 1 100%',
-    maxWidth: 380,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: 'black',
-    padding: 32,
-    marginRight: 24,
-    borderRadius: 8,
-    marginTop: 24,
-  },
-  merchImage: {
-    width: '100%',
-    cursor: 'pointer',
-    '&:hover': {
-      opacity: 0.8,
-    },
-  },
-  merchInfo: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    width: '100%',
-    height: 48,
-  },
-  contactTitle: {
-    color: '#AEAEAE',
-  },
-  merchLink: {
-    fontWeight: '600',
-    marginTop: 8,
-    cursor: 'pointer',
-    '&:hover': {
-      color: '#AEAEAE',
-    },
-    '@media (max-width: 759px)': {
-      fontSize: 14,
-    },
-  },
-  merchOutOfStock: {
-    color: 'red',
-    fontSize: 16,
-    '@media (max-width: 759px)': {
-      fontSize: 14,
-    },
-  },
-  merchPrice: {
-    fontSize: 16,
-    color: '#AEAEAE',
-    '@media (max-width: 759px)': {
-      fontSize: 14,
-    },
-  },
-});
+const MerchWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flew-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  padding: 0 10%;
+`;
 
-export default useStyles;
+const MerchItem = styled.div`
+  flex: 1 1 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  padding: 32px;
+  margin-right: 24px;
+  border-radius: 8px;
+  margin-top: 24px;
+`;
+
+const MerchImage = styled.div`
+  width: 100%;
+  cursor: pointer;
+
+  &:hover: {
+    opacity: 0.8;
+  }
+`;
+
+const MerchInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 48px;
+`;
+
+const MerchLink = styled.div`
+  font-weight: 600;
+  margin-top: 8px;
+  cursor: pointer;
+
+  &:hover: {
+    color: #aeaeae;
+  }
+
+  @media screen and (max-width: 759px) {
+    font-size: 14px;
+  }
+`;
+
+const MerchOutOfStock = styled.div`
+  color: red;
+  font-size: 16px;
+
+  @media screen and (max-width: 759px) {
+    font-size: 14px;
+  }
+`;
+
+const MerchPrice = styled.div`
+  color: #aeaeae;
+  font-size: 16px;
+
+  @media screen and (max-width: 759px) {
+    font-size: 14px;
+  }
+`;
+
+export { MerchWrapper, MerchItem, MerchImage, MerchInfo, MerchLink, MerchOutOfStock, MerchPrice };

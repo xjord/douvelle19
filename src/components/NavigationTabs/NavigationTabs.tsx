@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Tabs } from '../Navigation/Navigation';
-// import useStyles from './NavigationTabs.styles';
+import { NavigationTabsWrapper, NavigationTab } from './NavigationTabs.styles';
 
 interface NavigationTabsProps {
   currentTab?: Tabs;
@@ -12,21 +12,18 @@ interface NavigationTabsProps {
 
 const NavigationTabs = (props: NavigationTabsProps) => {
   const { currentTab, tabs, onPress } = props;
-  // mobileMenuOpen = false
-
-  const classes = {};
 
   return (
-    <div className={classes.navigationTabs}>
+    <NavigationTabsWrapper>
       {tabs?.map((step, index) => {
         const isActive = currentTab === step;
         return (
-          <div key={index} className={classes.tab} onClick={() => onPress(step)}>
+          <NavigationTab key={index} onClick={() => onPress(step)}>
             {step}
-          </div>
+          </NavigationTab>
         );
       })}
-    </div>
+    </NavigationTabsWrapper>
   );
 };
 

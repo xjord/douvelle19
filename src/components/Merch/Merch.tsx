@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import { openInTab } from '../../utils/helpers';
-// import useStyles from './Merch.styles';
+import { MerchWrapper, MerchItem, MerchImage, MerchInfo, MerchLink, MerchOutOfStock, MerchPrice } from './Merch.styles';
 
 enum MerchStatus {
   InStock = 'In Stock',
@@ -10,10 +10,8 @@ enum MerchStatus {
 }
 
 const Merch = ({ merch }) => {
-  const classes = {};
-
   return (
-    <div className={classes.merch}>
+    <MerchWrapper>
       {merch.map((item, index) => {
         const { title, price, status, image, link } = item?.fields;
 
@@ -21,29 +19,24 @@ const Merch = ({ merch }) => {
         const isInStock = status === MerchStatus.InStock;
 
         return (
-          <div key={index} className={classes.merchWrapper}>
-            <Image
-              className={classes.merchImage}
-              src={'https:' + imageSource}
-              width={368}
-              height={276}
-              alt={title}
-              onClick={() => openInTab(link)}
-            />
-            <div className={classes.merchInfo}>
-              <div className={classes.merchLink} onClick={() => openInTab(link)}>
-                {title}
-              </div>
-              {!isInStock ? (
-                <div className={classes.merchOutOfStock}>{status}</div>
-              ) : (
-                <div className={classes.merchPrice}>{price}</div>
-              )}
-            </div>
-          </div>
+          <MerchItem key={index}>
+            <MerchImage>
+              <Image
+                src={'https:' + imageSource}
+                width={368}
+                height={276}
+                alt={title}
+                onClick={() => openInTab(link)}
+              />
+            </MerchImage>
+            <MerchInfo>
+              <MerchLink onClick={() => openInTab(link)}>{title}</MerchLink>
+              {!isInStock ? <MerchOutOfStock>{status}</MerchOutOfStock> : <MerchPrice>{price}</MerchPrice>}
+            </MerchInfo>
+          </MerchItem>
         );
       })}
-    </div>
+    </MerchWrapper>
   );
 };
 

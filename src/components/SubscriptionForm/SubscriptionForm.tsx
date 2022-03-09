@@ -6,7 +6,7 @@ import TextField from '../TextField';
 import { requiredValidation, emailValidation, nameValidation, phoneValidation } from '../../utils/validation';
 import { useFormValidation } from '../../utils/helpers';
 import { FormValidationInput } from '../../models/index';
-import useStyles from './SubscriptionForm.styles';
+import { FormWrapper, FormTitle, Form, FormMessage } from './SubscriptionForm.styles';
 
 const SubscriptionForm = (props) => {
   const { status, message, onValidated } = props;
@@ -32,12 +32,10 @@ const SubscriptionForm = (props) => {
     });
   };
 
-  const classes = useStyles({ subscribed });
-
   return (
-    <form className={classes().formWrapper}>
-      <h3 className={classes().formTitle}>Sign up for the latest news on releases, edits, tour dates and more.</h3>
-      <div className={classes().form}>
+    <FormWrapper>
+      <FormTitle>Sign up for the latest news on releases, edits, tour dates and more.</FormTitle>
+      <Form>
         <TextField
           label="Email address"
           placeholder="Email address here..."
@@ -69,7 +67,7 @@ const SubscriptionForm = (props) => {
           value={phoneNumber}
           errorMessage={formValidation.phoneNumber}
         />
-      </div>
+      </Form>
       <div>
         <Button
           isLoading={isLoading}
@@ -80,10 +78,10 @@ const SubscriptionForm = (props) => {
           {subscribed ? 'Subscribed!' : 'Subscribe'}
         </Button>
       </div>
-      <div className={classes().formMessage}>
+      <FormMessage>
         <InnerHTML html={subscribed ? '' : message} />
-      </div>
-    </form>
+      </FormMessage>
+    </FormWrapper>
   );
 };
 

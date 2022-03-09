@@ -4,7 +4,7 @@ const NavigationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: 'center;
+  align-items: center;
   color: white;
 `;
 
@@ -15,6 +15,7 @@ const NavigationHamburger = styled.div`
   height: 24px;
   width: 24px;
   z-index: 1001;
+
   @media screen and (min-width: 759px) {
     display: none;
   }
@@ -30,7 +31,8 @@ const NavigationData = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  margintop: 10vh;
+  margin-top: 10vh;
+
   @media screen and (max-width: 759px) {
     margin-top: 2vh;
   }

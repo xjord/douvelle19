@@ -4,7 +4,7 @@ const BannerWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: 'center';
+  justify-content: center;
   width: 100%;
   padding-left: 5%;
   padding-right: 5%;
@@ -25,7 +25,7 @@ const Banner = styled.div`
 `;
 
 const BannerImageWrapper = styled.div`
-  cursor: 'pointer';
+  cursor: pointer;
   border-radius: 8px;
   box-shadow: -4px 4px 16px #000000;
 

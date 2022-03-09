@@ -1,43 +1,45 @@
-// import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
-const useStyles = createUseStyles({
-  textField: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 90,
-    marginBottom: 32,
-    width: '100%',
-    maxWidth: 500,
-  },
-  textFieldLabel: {
-    width: '100%',
-    textAlign: 'left',
-    minHeight: 20,
-    marginBottom: 8,
-  },
-  textFieldInput: {
-    width: '100%',
-    backgroundColor: '#373737',
-    color: '#AEAEAE',
-    borderRadius: 4,
-    fontSize: 16,
-    borderWidth: 0,
-    padding: 16,
-    height: 48,
-    '&:focus': {
-      outline: 'none',
-    },
-  },
-  textFieldErrorMessage: {
-    fontSize: 14,
-    marginTop: 8,
-    minHeight: 24,
-    width: '100%',
-    textAlign: 'left',
-    color: '#ffb6c1',
-  },
-});
+const TextFieldWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  margin-bottom: 32px;
+  width: 100%;
+  max-width: 500px;
+`;
 
-export default useStyles;
+const TextFieldLabel = styled.div`
+  width: 100%;
+  text-align: left;
+  min-height: 20px;
+  margin-bottom: 8px;
+`;
+
+const TextFieldInput = styled.div`
+  width: 100%;
+  background-color: #373737;
+  color: #aeaeae;
+  border-radius: 4px;
+  font-size: 16px;
+  border-width: 0;
+  padding: 16px;
+  height: 48px;
+
+  &:focus: {
+    outline: none;
+  }
+`;
+
+const TextFieldErrorMessage = styled.div`
+  font-size: 14px;
+  margin-top: 8px;
+  min-height: 24px;
+  width: 100%;
+  text-align: left;
+  color: #ffb6c1;
+`;
+
+export { TextFieldWrapper, TextFieldLabel, TextFieldInput, TextFieldErrorMessage };

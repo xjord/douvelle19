@@ -1,25 +1,20 @@
-// import { createUseStyles } from 'react-jss';
+import styled from 'styled-components';
 
-const useStyles = (tourDatesLoaded: boolean) =>
-  createUseStyles({
-    tourDate: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100%',
-      color: 'white',
-    },
-    tourDateLoading: {
-      ...(tourDatesLoaded && {
-        display: 'none',
-      }),
-    },
-    tourDateWidget: {
-      display: tourDatesLoaded ? 'auto' : 'none',
-      width: '100%',
-      maxWidth: '80%',
-    },
-  });
+const TourDate = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: column;
+  align-items: center;
+  width: 100%;
+  color: white;
+`;
 
-export default useStyles;
+const TourDateLoading = styled.div``;
+
+const TourDateWidget = styled.div`
+  display: auto;
+  width: 100%;
+  max-width: 80%;
+`;
+
+export { TourDate, TourDateLoading, TourDateWidget };

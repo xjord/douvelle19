@@ -3,7 +3,18 @@ import Image from 'next/image';
 import { faPlay, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// import useStyles from './Videos.styles';
+import {
+  VideosWrapper,
+  VideosBackground,
+  Video,
+  VideoPlayIconWrapper,
+  VideoPlayIcon,
+  VideoThumbnail,
+  VideoModal,
+  VideoCloseWrapper,
+  VideoCloseButton,
+  VideoModalPlayer,
+} from './Videos.styles';
 
 const Music = (props) => {
   const { videos } = props;
@@ -11,36 +22,36 @@ const Music = (props) => {
   const [modalVideo, setModalVideo] = useState('');
   const modalOpen = useMemo(() => modalVideo !== '', [modalVideo]);
 
-  const classes = {};
-
   return (
-    <div className={classes.videos}>
-      {modalOpen && <div className={classes.videoBackgroundOpacity} onClick={() => setModalVideo('')}></div>}
+    <VideosWrapper>
+      {modalOpen && <VideosBackground onClick={() => setModalVideo('')} />}
       <div>
         {videos.map((video, index) => {
           const videoId = video.fields.videoId;
           const thumbnail = `https://img.youtube.com/vi/${videoId}/0.jpg`;
 
           return (
-            <div key={index} className={classes.video} onClick={() => setModalVideo(videoId)}>
-              <div className={classes.videoPlayIconWrapper}>
-                <FontAwesomeIcon className={classes.videoPlayIcon} icon={faPlay} />
-              </div>
-              <Image className={classes.videoThumbnail} height={400} width={640} src={thumbnail} alt={thumbnail} />
-            </div>
+            <Video key={index} onClick={() => setModalVideo(videoId)}>
+              <VideoPlayIconWrapper>
+                <VideoPlayIcon>
+                  <FontAwesomeIcon icon={faPlay} />
+                </VideoPlayIcon>
+              </VideoPlayIconWrapper>
+              <VideoThumbnail>
+                <Image height={400} width={640} src={thumbnail} alt={thumbnail} />
+              </VideoThumbnail>
+            </Video>
           );
         })}
       </div>
       {modalOpen && (
-        <div className={classes.videoModal}>
-          <div className={classes.videoModalCloseWrapper}>
-            <FontAwesomeIcon
-              className={classes.videoModalClose}
-              icon={faCircleXmark}
-              onClick={() => setModalVideo('')}
-            />
-          </div>
-          <div className={classes.videoModalPlayer}>
+        <VideoModal>
+          <VideoCloseWrapper>
+            <VideoCloseButton>
+              <FontAwesomeIcon icon={faCircleXmark} onClick={() => setModalVideo('')} />
+            </VideoCloseButton>
+          </VideoCloseWrapper>
+          <VideoModalPlayer>
             <iframe
               width="100%"
               height="506"
@@ -48,10 +59,10 @@ const Music = (props) => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
-          </div>
-        </div>
+          </VideoModalPlayer>
+        </VideoModal>
       )}
-    </div>
+    </VideosWrapper>
   );
 };
 
