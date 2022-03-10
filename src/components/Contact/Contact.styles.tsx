@@ -7,10 +7,11 @@ const ContactWrapper = styled.form`
   justify-content: center;
   color: white;
   width: 100%;
+  max-width: 60%;
   font-size: 18px;
 
-  @media screen and (max-width: 759px) {
-    max-width: 60%;
+  @media screen and (max-width: 800px) {
+    max-width: 100%;
   }
 `;
 
@@ -22,6 +23,7 @@ const ContactItem = styled.form`
   width: 100%;
   padding: 32px;
   border-radius: 8px;
+  overflow: hidden;
   margin-bottom: 24px;
 
   @media screen and (max-width: 759px) {

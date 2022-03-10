@@ -27,6 +27,7 @@ const Banner = styled.div`
 const BannerImageWrapper = styled.div`
   cursor: pointer;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: -4px 4px 16px #000000;
 
   @media screen and (max-width: 759px) {
@@ -36,6 +37,7 @@ const BannerImageWrapper = styled.div`
 
 const BannerImage = styled.div`
   border-radius: 8px;
+  overflow: hidden;
   &:hover {
     opacity: 0.8;
   }
@@ -45,6 +47,7 @@ const BannerText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 500px;
 
   @media screen and (max-width: 759px) {
     width: 100%;

@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-const NavigationTabsWrapper = styled.div`
+interface NavigationTabsProps {
+  mobileMenuOpen?: boolean;
+  isActive?: boolean;
+}
+
+const NavigationTabsWrapper = styled.div<NavigationTabsProps>`
   display: flex;
   justify-content: space-between;
   color: white;
@@ -8,27 +13,26 @@ const NavigationTabsWrapper = styled.div`
   max-width: 654px;
 
   @media screen and (max-width: 759px) {
-    // display: props.mobileMenuOpen ? 'flex' : 'none',
-    // background-color: pink;
-    // // ...(props.mobileMenuOpen ? {
-    // // display: 'flex',
-    // backgroundColor: 'black',
-    // flexDirection: 'column',
-    // justifyContent: 'flex-start',
-    // paddingTop: '20vh',
-    // position: 'absolute',
-    // height: '100%',
-    // top: 0,
-    // zIndex: 1000,
+    display: ${(p) => (p.$mobileMenuOpen ? 'flex' : 'none')};
+    background-color: ${(p) => p.$mobileMenuOpen && 'black'};
+    flex-direction: ${(p) => (p.$mobileMenuOpen ? 'column' : 'row')};
+    justify-content: ${(p) => (p.$mobileMenuOpen ? 'flex-start' : 'space-between')};
+    align-items: ${(p) => p.$mobileMenuOpen && 'center'};
+    padding-top: ${(p) => p.$mobileMenuOpen && '20vh'};
+    position: ${(p) => p.$mobileMenuOpen && 'absolute'};
+    height: ${(p) => p.$mobileMenuOpen && '100%'};
+    top: ${(p) => p.$mobileMenuOpen && '0%'};
+    z-index: ${(p) => p.$mobileMenuOpen && '1000'};
   }
 `;
 
-const NavigationTab = styled.div`
+const NavigationTab = styled.div<NavigationTabsProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-ttems: center;
   cursor: pointer;
+  color: ${(p) => (p.$isActive ? 'pink' : 'white')};
 
   @media screen and (max-width: 759px) {
     padding: 14px;

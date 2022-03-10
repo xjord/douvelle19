@@ -11,18 +11,15 @@ interface NavigationTabsProps {
 }
 
 const NavigationTabs = (props: NavigationTabsProps) => {
-  const { currentTab, tabs, onPress } = props;
+  const { currentTab, tabs, onPress, mobileMenuOpen } = props;
 
   return (
-    <NavigationTabsWrapper>
-      {tabs?.map((step, index) => {
-        const isActive = currentTab === step;
-        return (
-          <NavigationTab key={index} onClick={() => onPress(step)}>
-            {step}
-          </NavigationTab>
-        );
-      })}
+    <NavigationTabsWrapper $mobileMenuOpen={mobileMenuOpen}>
+      {tabs?.map((step, index) => (
+        <NavigationTab $isActive={currentTab === step} key={index} onClick={() => onPress(step)}>
+          {step}
+        </NavigationTab>
+      ))}
     </NavigationTabsWrapper>
   );
 };

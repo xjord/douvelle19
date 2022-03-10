@@ -65,7 +65,7 @@ const Home = (props: NextPageProps) => {
   const { logo, socials } = props;
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Douvelle19</title>
         <meta name="description" content="Douvelle19 music producer and dj" />

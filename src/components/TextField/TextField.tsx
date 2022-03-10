@@ -8,9 +8,12 @@ const TextField = (props) => {
   return (
     <TextFieldWrapper>
       <TextFieldLabel>{label}</TextFieldLabel>
-      <TextFieldInput>
-        <input onChange={(event) => onChange(event.target.value)} value={value} type={type} placeholder={placeholder} />
-      </TextFieldInput>
+      <TextFieldInput
+        onChange={(event) => onChange(event.target.value)}
+        value={value}
+        type={type}
+        placeholder={placeholder}
+      />
       <TextFieldErrorMessage>{errorMessage}</TextFieldErrorMessage>
     </TextFieldWrapper>
   );

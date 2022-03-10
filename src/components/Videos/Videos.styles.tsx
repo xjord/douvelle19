@@ -60,6 +60,7 @@ const VideoPlayIcon = styled.div`
 
 const VideoThumbnail = styled.div`
   border-radius: 8px;
+  overflow: hidden;
   background-color: black;
   width: 100%;
 `;

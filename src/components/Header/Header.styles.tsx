@@ -10,8 +10,6 @@ const HeaderWrapper = styled.div`
   padding: 50px;
 `;
 
-const HeaderLogo = styled.div`
-  height: 20vmin;
-`;
+const HeaderLogo = styled.div``;
 
 export { HeaderWrapper, HeaderLogo };

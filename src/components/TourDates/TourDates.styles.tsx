@@ -15,6 +15,9 @@ const TourDateWidget = styled.div`
   display: auto;
   width: 100%;
   max-width: 80%;
+  @media screen and (max-width: 759px) {
+    max-width: 100%;
+  }
 `;
 
 export { TourDate, TourDateLoading, TourDateWidget };

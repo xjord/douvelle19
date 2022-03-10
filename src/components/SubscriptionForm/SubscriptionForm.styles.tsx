@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface SubscriptionFormProps {
+  subscribed?: boolean;
+}
+
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
@@ -10,6 +14,7 @@ const FormWrapper = styled.form`
   width: 100%;
   background-color: black;
   border-radius: 8px;
+  overflow: hidden;
   padding: 3% 10%;
 `;
 
@@ -28,12 +33,12 @@ const Form = styled.div`
   width: 100%;
 `;
 
-const FormMessage = styled.div`
+const FormMessage = styled.div<SubscriptionFormProps>`
   text-align: center;
   font-size: 14px;
   max-width: 450px;
   color: white;
-  // color: subscribed ? '#ffb6c1' : 'white',
+  color: ${(p) => (p.$subscribed ? '#ffb6c1' : 'white')};
   margin-top: 28px;
 `;
 

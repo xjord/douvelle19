@@ -3,10 +3,10 @@
 html,
 body {
   padding: 0;
-  padding-bottom: 5vh;
   margin: 0;
   background-color: #111111;
   font-family: Poppins;
+  min-width: 300px;
 }
 
 a {

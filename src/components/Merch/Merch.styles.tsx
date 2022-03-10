@@ -9,6 +9,11 @@ const MerchWrapper = styled.div`
   color: white;
   font-size: 18px;
   padding: 0 10%;
+
+  @media screen and (max-width: 759px) {
+    flex-direction: column;
+    padding: 0;
+  }
 `;
 
 const MerchItem = styled.div`
@@ -21,7 +26,12 @@ const MerchItem = styled.div`
   padding: 32px;
   margin-right: 24px;
   border-radius: 8px;
+  overflow: hidden;
   margin-top: 24px;
+
+  @media screen and (max-width: 759px) {
+    margin-right: 0px;
+  }
 `;
 
 const MerchImage = styled.div`

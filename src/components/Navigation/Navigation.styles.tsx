@@ -6,11 +6,12 @@ const NavigationWrapper = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
+  padding-bottom: 5vh;
 `;
 
 const NavigationHamburger = styled.div`
   position: absolute;
-  top: 32px;
+  top: 20px;
   left: 32px;
   height: 24px;
   width: 24px;

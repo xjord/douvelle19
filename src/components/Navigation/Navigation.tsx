@@ -36,7 +36,10 @@ const Navigation = (props: NavigationProps) => {
 
   const tabs = [Tabs.Home, Tabs.Music, Tabs.Videos, Tabs.Dates, Tabs.Merch, Tabs.MailingList, Tabs.Contact];
 
-  const tabSelect = (index: Tabs) => setTabIndex(index);
+  const tabSelect = (index: Tabs) => {
+    setTabIndex(index);
+    setMobileMenuOpen(false);
+  };
 
   const tabData = useMemo(() => {
     if (tabIndex === Tabs.Home) return <Banner banner={banner} />;
@@ -47,8 +50,6 @@ const Navigation = (props: NavigationProps) => {
     if (tabIndex === Tabs.MailingList) return <MailingList />;
     if (tabIndex === Tabs.Contact) return <Contact contacts={contacts} />;
   }, [tabIndex]);
-
-  const classes = {};
 
   return (
     <NavigationWrapper>

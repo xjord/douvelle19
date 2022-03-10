@@ -18,7 +18,7 @@ const TextFieldLabel = styled.div`
   margin-bottom: 8px;
 `;
 
-const TextFieldInput = styled.div`
+const TextFieldInput = styled.input`
   width: 100%;
   background-color: #373737;
   color: #aeaeae;
@@ -28,7 +28,7 @@ const TextFieldInput = styled.div`
   padding: 16px;
   height: 48px;
 
-  &:focus: {
+  &:focus {
     outline: none;
   }
 `;
