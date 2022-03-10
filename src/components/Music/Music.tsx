@@ -24,16 +24,16 @@ const Music = () => {
   return (
     <MusicWrapper>
       <MusicSpotifyWrapper>
-        {spotify.map((html) => (
-          <MusicSpotify>
+        {spotify.map((html, index) => (
+          <MusicSpotify key={index}>
             <InnerHTML html={html} />
           </MusicSpotify>
         ))}
       </MusicSpotifyWrapper>
 
       <MusicSoundcloudWrapper>
-        {soundcloud.map((html) => (
-          <MusicSoundcloud>
+        {soundcloud.map((html, index) => (
+          <MusicSoundcloud key={index}>
             <InnerHTML html={html} />
           </MusicSoundcloud>
         ))}
