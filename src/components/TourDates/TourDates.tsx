@@ -17,7 +17,7 @@ const TourDates = (props) => {
   }, [tourDateRef]);
 
   useEffect(() => {
-    if (height > 0) {
+    if (height > 40) {
       setTimeout(() => {
         setDatesLoaded(true);
       }, 500);
