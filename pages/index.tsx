@@ -45,6 +45,10 @@ export const getStaticProps = async () => {
     content_type: 'video',
   });
 
+  const songKick = await client.getEntries({
+    content_type: 'songkickWidget',
+  });
+
   return {
     props: {
       contacts: contacts.items,
@@ -53,6 +57,8 @@ export const getStaticProps = async () => {
       socials: socials.items,
       merch: merch.items,
       videos: videos.items,
+      music: music.items,
+      songKick: songKick.items,
     },
   };
 };

@@ -29,7 +29,7 @@ interface NavigationProps {
 
 const Navigation = (props: NavigationProps) => {
   const { data } = props;
-  const { banner, contacts, merch, videos } = data;
+  const { banner, contacts, merch, videos, music, songKick } = data;
 
   const [tabIndex, setTabIndex] = useState<Tabs>(Tabs.Home);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,8 +43,8 @@ const Navigation = (props: NavigationProps) => {
 
   const tabData = useMemo(() => {
     if (tabIndex === Tabs.Home) return <Banner banner={banner} />;
-    if (tabIndex === Tabs.Dates) return <TourDates />;
-    if (tabIndex === Tabs.Music) return <Music />;
+    if (tabIndex === Tabs.Dates) return <TourDates songKick={songKick} />;
+    if (tabIndex === Tabs.Music) return <Music music={music} />;
     if (tabIndex === Tabs.Videos) return <Videos videos={videos} />;
     if (tabIndex === Tabs.Merch) return <Merch merch={merch} />;
     if (tabIndex === Tabs.MailingList) return <MailingList />;

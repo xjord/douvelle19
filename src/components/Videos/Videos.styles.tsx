@@ -18,12 +18,24 @@ const VideosBackground = styled.div`
   height: 100vh;
 `;
 
+const VideoTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  margin-bottom: 24px;
+  font-size: 14px;
+`;
+
 const Video = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: 24px;
+  margin-bottom: 40px;
 `;
 
 const VideoPlayIconWrapper = styled.div`
@@ -39,23 +51,12 @@ const VideoPlayIconWrapper = styled.div`
   border-radius: 50%;
   border-width: 4px;
   border-color: white;
-  borderstyle: solid;
-
-  // boxShadow: {
-  //   x: -4,
-  //   y: -4,
-  //   blur: 16,
-  //   color: '#000000',
-  // },
+  border-style: solid;
+  box-shadow: -4px 4px 16px #000000;
 
   &:hover {
     transform: scale(1.1);
   }
-`;
-
-const VideoPlayIcon = styled.div`
-  width: 24px;
-  height: 24px;
 `;
 
 const VideoThumbnail = styled.div`
@@ -96,21 +97,15 @@ const VideoModalPlayer = styled.div`
   border-radius: 4px;
   background-color: black;
   cursor: pointer;
-
-  // boxShadow: {
-  //   x: -4,
-  //   y: -4,
-  //   blur: 16,
-  //   color: '#000000',
-  // },
+  box-shadow: -4px 4px 16px #000000;
 `;
 
 export {
   VideosWrapper,
   VideosBackground,
+  VideoTitle,
   Video,
   VideoPlayIconWrapper,
-  VideoPlayIcon,
   VideoThumbnail,
   VideoModal,
   VideoCloseWrapper,

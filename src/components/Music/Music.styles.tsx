@@ -1,33 +1,53 @@
 import styled from 'styled-components';
 
-const MusicWrapper = styled.form`
+const MusicWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
+  align-items: center;
   justify-content: center;
   width: 100%;
   max-width: 100%;
 `;
 
-const MusicSpotifyWrapper = styled.form`
+const MusicTitle = styled.div`
   display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  margin-bottom: 24px;
+  font-size: 14px;
+`;
+
+const MusicSpotifyWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
-  margin-bottom: 5%;
-`;
-
-const MusicSpotify = styled.form`
-  width: 50%;
-`;
-
-const MusicSoundcloudWrapper = styled.form`
-  display: flex;
   width: 100%;
-  justify-content: space-between;
+  max-width: 800px;
 `;
 
-const MusicSoundcloud = styled.form`
-  width: 30%;
+const MusicSpotify = styled.div`
+  width: 100%;
+  margin-bottom: 40px;
 `;
 
-export { MusicWrapper, MusicSpotifyWrapper, MusicSpotify, MusicSoundcloudWrapper, MusicSoundcloud };
+const MusicSoundcloudWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+`;
+
+const MusicSoundcloud = styled.div`
+  width: 100%;
+  margin-bottom: 40px;
+`;
+
+export { MusicWrapper, MusicTitle, MusicSpotifyWrapper, MusicSpotify, MusicSoundcloudWrapper, MusicSoundcloud };

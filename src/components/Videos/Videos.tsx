@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   VideosWrapper,
   VideosBackground,
+  VideoTitle,
   Video,
   VideoPlayIconWrapper,
-  VideoPlayIcon,
   VideoThumbnail,
   VideoModal,
   VideoCloseWrapper,
@@ -28,19 +28,21 @@ const Music = (props) => {
       <div>
         {videos.map((video, index) => {
           const videoId = video.fields.videoId;
+          const title = video.fields.title;
           const thumbnail = `https://img.youtube.com/vi/${videoId}/0.jpg`;
 
           return (
-            <Video key={index} onClick={() => setModalVideo(videoId)}>
-              <VideoPlayIconWrapper>
-                <VideoPlayIcon>
-                  <FontAwesomeIcon icon={faPlay} />
-                </VideoPlayIcon>
-              </VideoPlayIconWrapper>
-              <VideoThumbnail>
-                <Image height={400} width={640} src={thumbnail} alt={thumbnail} />
-              </VideoThumbnail>
-            </Video>
+            <div key={index}>
+              <VideoTitle>{title}</VideoTitle>
+              <Video onClick={() => setModalVideo(videoId)}>
+                <VideoPlayIconWrapper>
+                  <FontAwesomeIcon height={24} width={24} icon={faPlay} />
+                </VideoPlayIconWrapper>
+                <VideoThumbnail>
+                  <Image height={400} width={640} src={thumbnail} alt={thumbnail} />
+                </VideoThumbnail>
+              </Video>
+            </div>
           );
         })}
       </div>

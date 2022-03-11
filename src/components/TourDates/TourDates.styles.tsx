@@ -9,7 +9,13 @@ const TourDate = styled.div`
   color: white;
 `;
 
-const TourDateLoading = styled.div``;
+const TourDateLoading = styled.div`
+  display: flex;
+  height: 120px;
+  flex-direction: row;
+  justify-content: column;
+  align-items: center;
+`;
 
 const TourDateWidget = styled.div`
   display: auto;

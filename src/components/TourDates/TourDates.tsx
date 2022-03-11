@@ -4,28 +4,37 @@ import InnerHTML from 'dangerously-set-html-content';
 
 import { TourDate, TourDateLoading, TourDateWidget } from './TourDates.styles';
 
-const TourDates = () => {
+const TourDates = (props) => {
+  const { songKick } = props;
   const [height, setHeight] = useState(0);
+  const [datesLoaded, setDatesLoaded] = useState(false);
   const tourDateRef = useRef();
 
-  const songKickWidget = `<a href="https://www.songkick.com/artists/10110895" class="songkick-widget" data-theme="dark" data-track-button="on" data-detect-style="true" data-font-color="#ffffff" data-background-color="transparent" data-locale="en">Douvelle19 Tour Dates</a> <script src="//widget.songkick.com/10110895/widget.js"></script>`;
+  const songKickWidget = songKick[0]?.fields?.embeddedCode;
 
   useEffect(() => {
     tourDateRef.current && setHeight(tourDateRef.current.clientHeight ?? 0);
   }, [tourDateRef]);
 
-  // const tourDatesLoaded = height > 0;
-
-  const tourDatesLoaded = true;
+  useEffect(() => {
+    if (height > 0) {
+      setTimeout(() => {
+        setDatesLoaded(true);
+      }, 500);
+    }
+  }, [height]);
 
   return (
     <TourDate ref={tourDateRef}>
-      <TourDateLoading>
-        <ClipLoader size={40} color="white" />
-      </TourDateLoading>
-      <TourDateWidget>
-        <InnerHTML html={songKickWidget} />
-      </TourDateWidget>
+      {!datesLoaded ? (
+        <TourDateLoading>
+          <ClipLoader size={40} color="white" />
+        </TourDateLoading>
+      ) : (
+        <TourDateWidget>
+          <InnerHTML html={songKickWidget} />
+        </TourDateWidget>
+      )}
     </TourDate>
   );
 };

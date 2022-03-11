@@ -20,9 +20,10 @@ const FormWrapper = styled.form`
 
 const FormTitle = styled.div`
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
+  margin-top: 5%;
 `;
 
 const Form = styled.div`
