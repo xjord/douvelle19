@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
+interface VideoStyleProps {
+  hovering?: boolean;
+}
+
 const VideosWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 `;
 
 const VideosBackground = styled.div`
@@ -38,7 +43,7 @@ const Video = styled.div`
   margin-bottom: 40px;
 `;
 
-const VideoPlayIconWrapper = styled.div`
+const VideoPlayIconWrapper = styled.div<VideoStyleProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,10 +58,7 @@ const VideoPlayIconWrapper = styled.div`
   border-color: white;
   border-style: solid;
   box-shadow: -4px 4px 16px #000000;
-
-  &:hover {
-    transform: scale(1.1);
-  }
+  transform: ${(p) => (p.$hovering ? 'scale(1.1)' : 'scale(1)')};
 `;
 
 const VideoThumbnail = styled.div`

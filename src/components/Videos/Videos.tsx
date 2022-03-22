@@ -20,6 +20,7 @@ const Music = (props) => {
   const { videos } = props;
 
   const [modalVideo, setModalVideo] = useState('');
+  const [hovering, setHovering] = useState(false);
   const modalOpen = useMemo(() => modalVideo !== '', [modalVideo]);
 
   return (
@@ -34,8 +35,12 @@ const Music = (props) => {
           return (
             <div key={index}>
               <VideoTitle>{title}</VideoTitle>
-              <Video onClick={() => setModalVideo(videoId)}>
-                <VideoPlayIconWrapper>
+              <Video
+                onClick={() => setModalVideo(videoId)}
+                onMouseEnter={() => setHovering(true)}
+                onMouseLeave={() => setHovering(false)}
+              >
+                <VideoPlayIconWrapper $hovering={hovering}>
                   <FontAwesomeIcon height={24} width={24} icon={faPlay} />
                 </VideoPlayIconWrapper>
                 <VideoThumbnail>
