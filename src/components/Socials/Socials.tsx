@@ -30,17 +30,19 @@ const Socials = ({ socials }) => {
 
   return (
     <SocialWrapper>
-      {socials.reverse().map((social, index) => {
-        const link = social?.fields?.link;
-        const type = social?.fields?.type;
-        const icon = SocialIcons[type];
+      {socials
+        .sort((a, b) => a.fields?.priority - b.fields?.priority)
+        .map((social, index) => {
+          const link = social?.fields?.link;
+          const type = social?.fields?.type;
+          const icon = SocialIcons[type];
 
-        return (
-          <SocialLogo key={`${index}-${social}`}>
-            <FontAwesomeIcon icon={icon} onClick={() => openSocial(link)} />
-          </SocialLogo>
-        );
-      })}
+          return (
+            <SocialLogo key={`${index}-${social}`}>
+              <FontAwesomeIcon icon={icon} onClick={() => openSocial(link)} />
+            </SocialLogo>
+          );
+        })}
     </SocialWrapper>
   );
 };
