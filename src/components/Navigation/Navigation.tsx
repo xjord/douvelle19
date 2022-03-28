@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { ITourDates } from '../../models/index';
+import Photos from '../Photos';
 import Banner from '../Banner';
 import Music from '../Music';
 import Videos from '../Videos';
@@ -15,9 +16,10 @@ import { NavigationWrapper, NavigationHamburger, NavigationData } from './Naviga
 
 export enum Tabs {
   Home = 'home',
-  Dates = 'dates',
   Music = 'music',
+  Photos = 'photos',
   Videos = 'videos',
+  Dates = 'dates',
   Merch = 'merch',
   Contact = 'contact',
   MailingList = 'mailing list',
@@ -34,7 +36,16 @@ const Navigation = (props: NavigationProps) => {
   const [tabIndex, setTabIndex] = useState<Tabs>(Tabs.Home);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const tabs = [Tabs.Home, Tabs.Music, Tabs.Videos, Tabs.Dates, Tabs.Merch, Tabs.MailingList, Tabs.Contact];
+  const tabs = [
+    Tabs.Home,
+    Tabs.Music,
+    Tabs.Photos,
+    Tabs.Videos,
+    Tabs.Dates,
+    Tabs.Merch,
+    Tabs.MailingList,
+    Tabs.Contact,
+  ];
 
   const tabSelect = (index: Tabs) => {
     setTabIndex(index);
@@ -43,9 +54,10 @@ const Navigation = (props: NavigationProps) => {
 
   const tabData = useMemo(() => {
     if (tabIndex === Tabs.Home) return <Banner banner={banner} />;
-    if (tabIndex === Tabs.Dates) return <TourDates songKick={songKick} />;
     if (tabIndex === Tabs.Music) return <Music music={music} />;
+    if (tabIndex === Tabs.Photos) return <Photos />;
     if (tabIndex === Tabs.Videos) return <Videos videos={videos} />;
+    if (tabIndex === Tabs.Dates) return <TourDates songKick={songKick} />;
     if (tabIndex === Tabs.Merch) return <Merch merch={merch} />;
     if (tabIndex === Tabs.MailingList) return <MailingList />;
     if (tabIndex === Tabs.Contact) return <Contact contacts={contacts} />;
