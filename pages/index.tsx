@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import { createClient } from 'contentful';
+import ReactGA from 'react-ga';
 
 import { ITourDates } from '../src/models/index';
 import Header from '../src/components/Header';
 import Socials from '../src/components/Socials';
 import Navigation from '../src/components/Navigation';
-import styles from '../styles/Home.module.css';
+
+ReactGA.initialize('G-74ZQM0TW54');
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -80,6 +82,7 @@ const Home = (props: NextPageProps) => {
       <Header logo={logo} />
       <Socials socials={socials} />
       <Navigation data={props} />
+      <script> </script>
     </div>
   );
 };
