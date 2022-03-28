@@ -1,13 +1,9 @@
-import Head from 'next/head';
 import { createClient } from 'contentful';
-import ReactGA from 'react-ga';
 
 import { ITourDates } from '../src/models/index';
 import Header from '../src/components/Header';
 import Socials from '../src/components/Socials';
 import Navigation from '../src/components/Navigation';
-
-ReactGA.initialize('G-74ZQM0TW54');
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -74,11 +70,6 @@ const Home = (props: NextPageProps) => {
 
   return (
     <div>
-      <Head>
-        <title>Douvelle19</title>
-        <meta name="description" content="Douvelle19 music producer and dj" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Header logo={logo} />
       <Socials socials={socials} />
       <Navigation data={props} />

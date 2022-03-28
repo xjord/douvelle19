@@ -34,7 +34,7 @@ const Music = (props: MusicProps) => {
           const buyNowLink = player.fields?.buyLink;
 
           return (
-            <>
+            <div key={index}>
               <MusicTitleWrapper>
                 <MusicTitle>{title}</MusicTitle>
                 {buyNowLink && (
@@ -46,10 +46,10 @@ const Music = (props: MusicProps) => {
                   </>
                 )}
               </MusicTitleWrapper>
-              <MusicSpotify key={index}>
+              <MusicSpotify>
                 <InnerHTML html={html} />
               </MusicSpotify>
-            </>
+            </div>
           );
         })}
       </MusicSpotifyWrapper>
@@ -61,7 +61,7 @@ const Music = (props: MusicProps) => {
           const buyNowLink = player.fields?.buyLink;
 
           return (
-            <>
+            <div key={index}>
               <MusicTitleWrapper>
                 <MusicTitle>{title}</MusicTitle>
                 {buyNowLink && (
@@ -73,10 +73,10 @@ const Music = (props: MusicProps) => {
                   </>
                 )}
               </MusicTitleWrapper>
-              <MusicSoundcloud key={index}>
+              <MusicSoundcloud>
                 <InnerHTML html={html} />
               </MusicSoundcloud>
-            </>
+            </div>
           );
         })}
       </MusicSoundcloudWrapper>
