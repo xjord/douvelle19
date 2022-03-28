@@ -29,6 +29,7 @@ const BannerImageWrapper = styled.div`
   border-radius: 8px;
   overflow: hidden;
   box-shadow: -4px 4px 16px #000000;
+  max-height: 500px;
 
   @media screen and (max-width: 759px) {
     margin-right: 0px;

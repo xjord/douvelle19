@@ -10,16 +10,27 @@ const MusicWrapper = styled.div`
   max-width: 100%;
 `;
 
-const MusicTitle = styled.div`
+const MusicTitleWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-content: center;
   align-items: center;
   justify-content: center;
   color: white;
   width: 100%;
   margin-bottom: 24px;
+`;
+
+const MusicTitle = styled.div`
   font-size: 14px;
+  padding-right: 2%;
+`;
+
+const MusicBuyButton = styled.div`
+  font-size: 14px;
+  padding-left: 2%;
+  color: red;
+  cursor: pointer;
 `;
 
 const MusicSpotifyWrapper = styled.div`
@@ -50,4 +61,13 @@ const MusicSoundcloud = styled.div`
   margin-bottom: 40px;
 `;
 
-export { MusicWrapper, MusicTitle, MusicSpotifyWrapper, MusicSpotify, MusicSoundcloudWrapper, MusicSoundcloud };
+export {
+  MusicWrapper,
+  MusicTitleWrapper,
+  MusicTitle,
+  MusicBuyButton,
+  MusicSpotifyWrapper,
+  MusicSpotify,
+  MusicSoundcloudWrapper,
+  MusicSoundcloud,
+};

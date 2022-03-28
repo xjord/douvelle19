@@ -1,9 +1,12 @@
 import React from 'react';
 import InnerHTML from 'dangerously-set-html-content';
 
+import { openInTab } from '../../utils/helpers';
 import {
   MusicWrapper,
+  MusicTitleWrapper,
   MusicTitle,
+  MusicBuyButton,
   MusicSpotifyWrapper,
   MusicSpotify,
   MusicSoundcloudWrapper,
@@ -26,11 +29,23 @@ const Music = (props: MusicProps) => {
     <MusicWrapper>
       <MusicSpotifyWrapper>
         {spotify.map((player, index) => {
-          const html = player.fields.embedCode;
-          const title = player.fields.title;
+          const html = player.fields?.embedCode;
+          const title = player.fields?.title;
+          const buyNowLink = player.fields?.buyLink;
+
           return (
             <>
-              <MusicTitle>{title}</MusicTitle>
+              <MusicTitleWrapper>
+                <MusicTitle>{title}</MusicTitle>
+                {buyNowLink && (
+                  <>
+                    -
+                    <MusicBuyButton>
+                      <div onClick={() => openInTab(buyNowLink)}>Buy Now</div>
+                    </MusicBuyButton>
+                  </>
+                )}
+              </MusicTitleWrapper>
               <MusicSpotify key={index}>
                 <InnerHTML html={html} />
               </MusicSpotify>
@@ -41,11 +56,23 @@ const Music = (props: MusicProps) => {
 
       <MusicSoundcloudWrapper>
         {soundcloud.map((player, index) => {
-          const html = player.fields.embedCode;
-          const title = player.fields.title;
+          const html = player.fields?.embedCode;
+          const title = player.fields?.title;
+          const buyNowLink = player.fields?.buyLink;
+
           return (
             <>
-              <MusicTitle>{title}</MusicTitle>
+              <MusicTitleWrapper>
+                <MusicTitle>{title}</MusicTitle>
+                {buyNowLink && (
+                  <>
+                    -
+                    <MusicBuyButton>
+                      <div onClick={() => openInTab(buyNowLink)}>Buy Now</div>
+                    </MusicBuyButton>
+                  </>
+                )}
+              </MusicTitleWrapper>
               <MusicSoundcloud key={index}>
                 <InnerHTML html={html} />
               </MusicSoundcloud>

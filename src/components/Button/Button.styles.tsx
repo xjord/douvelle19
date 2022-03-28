@@ -15,7 +15,6 @@ const ButtonWrapper = styled.div<ButtonProps>`
   padding-right: 30px;
   width: ${(p) => (p.$width ? `${p.$width}px` : '100%')};
   background-color: ${(p) => (p.$disabled ? 'rgba(255, 255, 255, 0.5)' : 'white')};
-  font-size: 16px;
   font-weight: 500;
   border-radius: 4px;
   color: black;
