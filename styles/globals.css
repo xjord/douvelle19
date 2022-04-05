@@ -17,3 +17,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.not-found {
+  color: #ffffff;
+  text-align: center;
+}
