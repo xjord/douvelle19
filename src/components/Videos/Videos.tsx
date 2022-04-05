@@ -41,7 +41,7 @@ const Music = (props) => {
                 onMouseLeave={() => setHovering(false)}
               >
                 <VideoPlayIconWrapper $hovering={hovering}>
-                  <FontAwesomeIcon height={24} width={24} icon={faPlay} />
+                  <FontAwesomeIcon height={24} width={24} icon={faPlay} color="white" />
                 </VideoPlayIconWrapper>
                 <VideoThumbnail>
                   <Image height={400} width={640} src={thumbnail} alt={thumbnail} />

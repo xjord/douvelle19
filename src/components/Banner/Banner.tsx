@@ -15,7 +15,9 @@ import {
   BannerButtonWrapper,
 } from './Banner.styles';
 
-const Home = ({ banner }) => {
+const Home = (props) => {
+  const { banner } = props;
+
   const releaseTitle = banner?.releaseTitle;
   const releaseLink = banner?.link?.content[0]?.content[0]?.value;
   const releaseImage = banner?.bannerImage?.fields?.file?.url;
