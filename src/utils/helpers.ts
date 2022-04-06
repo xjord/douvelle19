@@ -103,3 +103,20 @@ const usePrevious = <T>(value: T | undefined, deps?: ReadonlyArray<any>): T | un
   }, deps);
   return ref.current;
 };
+
+export const fetchContentfulData = async () => {
+  //TODO: move link to ENV variable
+  return fetch(
+    'https://cdn.contentful.com/spaces/8n1b4220zx90/environments/master/entries?access_token=9k0anxCrydz9qF3FR_zHqvixwoBqxhLjuhtz3R1IgKo',
+  ).then((response) =>
+    response.json().then((data) => {
+      const socials = data.items.filter((item) => item.sys.contentType.sys.id === 'socialLink');
+      const logo = data.items.filter((item) => item.sys.contentType.sys.id === 'logo');
+
+      return {
+        logo,
+        socials,
+      };
+    }),
+  );
+};

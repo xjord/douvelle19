@@ -2,24 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 
 import { HeaderWrapper, HeaderLogo } from './Header.styles';
-import { createClient } from 'contentful';
-
-export const getStaticProps = async () => {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
-
-  const logo = await client.getEntries({
-    content_type: 'logo',
-  });
-
-  return {
-    props: {
-      logo: logo.items[0].fields,
-    },
-  };
-};
 
 const Header = (props) => {
   const { logo } = props;

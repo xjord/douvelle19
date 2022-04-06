@@ -28,10 +28,12 @@ const Socials = ({ socials }) => {
     Apple: faItunes,
   };
 
+  if (!socials) return <></>;
+
   return (
     <SocialWrapper>
       {socials
-        .sort((a, b) => a.fields?.priority - b.fields?.priority)
+        ?.sort((a, b) => a.fields?.priority - b.fields?.priority)
         .map((social, index) => {
           const link = social?.fields?.link;
           const type = social?.fields?.type;

@@ -1,6 +1,5 @@
-import Music from '../src/components/Music';
-
 import { createClient } from 'contentful';
+import Music from '../src/components/Music';
 
 export const getStaticProps = async () => {
   const client = createClient({
@@ -11,6 +10,7 @@ export const getStaticProps = async () => {
   const music = await client.getEntries({
     content_type: 'music',
   });
+
   return {
     props: {
       music: music.items,

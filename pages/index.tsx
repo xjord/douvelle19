@@ -1,6 +1,5 @@
 import { createClient } from 'contentful';
 
-import Layout from '../src/components/Layout/Layout';
 import Banner from '../src/components/Banner';
 
 export const getStaticProps = async () => {
@@ -23,11 +22,7 @@ export const getStaticProps = async () => {
 const Home = (props) => {
   const { banner } = props;
 
-  return (
-    <Layout>
-      <Banner banner={banner} />
-    </Layout>
-  );
+  return <Banner banner={banner} />;
 };
 
 export default Home;
