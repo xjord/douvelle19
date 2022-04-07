@@ -9,7 +9,7 @@ export const getServerSideProps = async ({ res }) => {
       return !['api', '_app.tsx', '_document.tsx', '404.tsx', 'sitemap.xml.tsx'].includes(staticPage);
     })
     .map((pagePath) => {
-      return `www.douvelle19.com/${pagePath}`;
+      return `http://www.douvelle19.com/${pagePath}`;
     });
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
