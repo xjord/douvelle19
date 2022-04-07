@@ -107,7 +107,7 @@ const usePrevious = <T>(value: T | undefined, deps?: ReadonlyArray<any>): T | un
 export const fetchContentfulData = async () => {
   //TODO: move link to ENV variable
   const res = await fetch(
-    'https://cdn.contentful.com/spaces/8n1b4220zx90/environments/master/entries?access_token=9k0anxCrydz9qF3FR_zHqvixwoBqxhLjuhtz3R1IgKo',
+    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENV_ID}/entries?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`,
   ).then((response) =>
     response.json().then((data) => {
       return data.items;
@@ -127,9 +127,8 @@ export const fetchContentfulData = async () => {
 };
 
 const fetchContentfulAssest = async (assetId: string) => {
-  //TODO: move link to ENV variable
   return await fetch(
-    `https://cdn.contentful.com/spaces/8n1b4220zx90/environments/master/assets/${assetId}?access_token=9k0anxCrydz9qF3FR_zHqvixwoBqxhLjuhtz3R1IgKo`,
+    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENV_ID}/assets/${assetId}?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`,
   ).then((response) =>
     response.json().then((data) => {
       return data;

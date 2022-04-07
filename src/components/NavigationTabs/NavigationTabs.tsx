@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { Tabs } from '../Navigation/Navigation';
@@ -15,17 +16,14 @@ const NavigationTabs = (props: NavigationTabsProps) => {
 
   const router = useRouter();
 
-  const tabSelect = (step: Tabs) => {
-    router.push(`/${step}`);
-    setMobileMenuOpen(false);
-  };
-
   return (
     <NavigationTabsWrapper $mobileMenuOpen={mobileMenuOpen}>
       {tabs?.map((step, index) => (
-        <NavigationTab $isActive={router.asPath === `/${step}`} key={index} onClick={() => tabSelect(step)}>
-          {step === '' ? 'home' : step}
-        </NavigationTab>
+        <Link key={index} href={`/${step}`} passHref>
+          <NavigationTab $isActive={router.asPath === `/${step}`} onClick={() => setMobileMenuOpen(false)}>
+            {step === '' ? 'home' : step}
+          </NavigationTab>
+        </Link>
       ))}
     </NavigationTabsWrapper>
   );
