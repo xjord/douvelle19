@@ -9,7 +9,12 @@ export const getServerSideProps = async ({ res }) => {
   }[process.env.NODE_ENV];
 
   const paths = fs
-    .readdirSync('pages')
+    .readdirSync(
+      {
+        development: 'pages',
+        production: './',
+      }[process.env.NODE_ENV],
+    )
     .filter((staticPage) => {
       return !['api', '_app.tsx', '_document.tsx', '404.tsx', 'sitemap.xml.tsx'].includes(staticPage);
     })
