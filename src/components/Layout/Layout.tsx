@@ -6,7 +6,6 @@ import Header from '../Header';
 import Socials from '../Socials';
 import Navigation from '../Navigation';
 import { fetchContentfulData } from '../../utils/helpers';
-
 import { ChildrenWrapper } from './Layout.styles';
 
 const Layout = (props) => {
@@ -19,7 +18,8 @@ const Layout = (props) => {
     res.then((data) => setData(data));
   }, []);
 
-  console.log(data, 'here');
+  const logo = data?.logo?.fields.file.url;
+  const socials = data?.socials;
 
   return (
     <>
@@ -46,8 +46,8 @@ const Layout = (props) => {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Header logo={data.logo[0]} /> */}
-      <Socials socials={data.socials} />
+      {logo && <Header logo={logo} />}
+      <Socials socials={socials} />
       <Navigation />
       <ChildrenWrapper>{children}</ChildrenWrapper>
     </>

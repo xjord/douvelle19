@@ -106,17 +106,33 @@ const usePrevious = <T>(value: T | undefined, deps?: ReadonlyArray<any>): T | un
 
 export const fetchContentfulData = async () => {
   //TODO: move link to ENV variable
-  return fetch(
+  const res = await fetch(
     'https://cdn.contentful.com/spaces/8n1b4220zx90/environments/master/entries?access_token=9k0anxCrydz9qF3FR_zHqvixwoBqxhLjuhtz3R1IgKo',
   ).then((response) =>
     response.json().then((data) => {
-      const socials = data.items.filter((item) => item.sys.contentType.sys.id === 'socialLink');
-      const logo = data.items.filter((item) => item.sys.contentType.sys.id === 'logo');
+      return data.items;
+    }),
+  );
 
-      return {
-        logo,
-        socials,
-      };
+  const socials = res.filter((item) => item.sys.contentType.sys.id === 'socialLink');
+  const logoData = res.filter((item) => item.sys.contentType.sys.id === 'logo');
+  const logoId = logoData[0].fields.logo.sys.id;
+
+  const logo = await fetchContentfulAssest(logoId);
+
+  return {
+    socials,
+    logo,
+  };
+};
+
+const fetchContentfulAssest = async (assetId: string) => {
+  //TODO: move link to ENV variable
+  return await fetch(
+    `https://cdn.contentful.com/spaces/8n1b4220zx90/environments/master/assets/${assetId}?access_token=9k0anxCrydz9qF3FR_zHqvixwoBqxhLjuhtz3R1IgKo`,
+  ).then((response) =>
+    response.json().then((data) => {
+      return data;
     }),
   );
 };
