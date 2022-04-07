@@ -19,6 +19,21 @@ a {
 }
 
 .not-found {
-  color: #ffffff;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  color: pink;
+  font-size: 22px;
 }
+
+.not-found-text {
+  padding-bottom: 32px;
+}
+
+.not-found-go-back {
+  font-size: 16px;
+}
+

@@ -1,6 +1,17 @@
+import { useRouter } from 'next/router';
+
+import Button from '../src/components/Button';
+
 const NotFound = () => {
-  //TODO: customise 404 page
-  return <div className="not-found">Oops, something went wrong</div>;
+  const router = useRouter();
+  return (
+    <div className="not-found">
+      <div className="not-found-text">Oops, something went wrong</div>
+      <div className="not-found-go-back">
+        <Button onClick={() => router.back()}>Go back</Button>
+      </div>
+    </div>
+  );
 };
 
 export default NotFound;
