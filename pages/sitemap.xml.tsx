@@ -1,15 +1,20 @@
 import * as fs from 'fs';
 
-const Sitemap = () => null;
+const Sitemap = () => {};
 
 export const getServerSideProps = async ({ res }) => {
+  const baseUrl = {
+    development: 'http://localhost:5000',
+    production: 'https://mydomain.com',
+  }[process.env.NODE_ENV];
+
   const paths = fs
     .readdirSync('pages')
     .filter((staticPage) => {
       return !['api', '_app.tsx', '_document.tsx', '404.tsx', 'sitemap.xml.tsx'].includes(staticPage);
     })
     .map((pagePath) => {
-      return `http://www.douvelle19.com/${pagePath}`;
+      return `${baseUrl}/${pagePath}`;
     });
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

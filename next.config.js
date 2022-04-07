@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
+    NODE_ENV: process.env.NODE_ENV,
     INSTAGRAM_ACCESS_TOKEN: process.env.INSTAGRAM_ACCESS_TOKEN,
     GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
     MAILCHIMP_URL: process.env.MAILCHIMP_URL,
