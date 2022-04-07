@@ -28,6 +28,13 @@ const nextConfig = {
   images: {
     domains: ['images.ctfassets.net', 'img.youtube.com'],
   },
+  experimental: {
+    modern: true,
+    async rewrites() {
+      return [{ source: '/sitemap.xml', destination: '/api/sitemap' }];
+    },
+    catchAllRouting: true,
+  },
 };
 
 module.exports = nextConfig;
