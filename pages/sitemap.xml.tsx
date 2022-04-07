@@ -4,8 +4,8 @@ const Sitemap = () => {};
 
 export const getServerSideProps = async ({ res }) => {
   const baseUrl = {
-    development: 'http://localhost:5000',
-    production: 'https://mydomain.com',
+    development: 'http://localhost:3000',
+    production: 'https://douvelle19.com',
   }[process.env.NODE_ENV];
 
   const paths = fs
