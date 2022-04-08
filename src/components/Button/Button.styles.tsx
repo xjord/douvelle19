@@ -20,7 +20,7 @@ const ButtonWrapper = styled.div<ButtonProps>`
   color: black;
   cursor: pointer;
 
-  &:active {
+  &:hover {
     opacity: 0.8;
   }
 `;

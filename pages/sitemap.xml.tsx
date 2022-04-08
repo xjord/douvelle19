@@ -8,19 +8,16 @@ export const getServerSideProps = async ({ res }) => {
     production: 'https://douvelle19.com',
   }[process.env.NODE_ENV];
 
-  const paths = fs
-    .readdirSync(
-      {
-        development: 'pages',
-        production: './.next/server/pages',
-      }[process.env.NODE_ENV],
-    )
-    .filter((staticPage) => {
-      return !['api', '_app.tsx', '_document.tsx', '404.tsx', 'sitemap.xml.tsx'].includes(staticPage);
-    })
-    .map((pagePath) => {
-      return `${baseUrl}/${pagePath}`;
-    });
+  const paths = [
+    'contact.tsx',
+    'dates.tsx',
+    'index.tsx',
+    'merch.tsx',
+    'music.tsx',
+    'news.tsx',
+    'photos.tsx',
+    'videos.tsx',
+  ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -28,7 +25,7 @@ export const getServerSideProps = async ({ res }) => {
         .map((url) => {
           return `
             <url>
-              <loc>${url}</loc>
+              <loc>${baseUrl}/${url}</loc>
               <lastmod>${new Date().toISOString()}</lastmod>
               <changefreq>monthly</changefreq>
               <priority>1.0</priority>
