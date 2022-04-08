@@ -8,7 +8,13 @@ import { useFormValidation } from '../../utils/helpers';
 import { FormValidationInput } from '../../models/index';
 import { FormWrapper, FormTitle, Form, FormMessage } from './SubscriptionForm.styles';
 
-const SubscriptionForm = (props) => {
+interface SubscriptionFormProps {
+  status?: 'sending' | 'success';
+  message?: string;
+  onValidated?: ({}) => void;
+}
+
+const SubscriptionForm = (props: SubscriptionFormProps) => {
   const { status, message, onValidated } = props;
 
   const [email, setEmail] = useState('');
