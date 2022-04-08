@@ -11,7 +11,7 @@ interface ButtonProps {
   width?: number;
 }
 
-const Button = (props) => {
+const Button = (props: ButtonProps) => {
   const { children, isLoading = false, onClick, disabled = false, width } = props;
 
   return (
