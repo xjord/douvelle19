@@ -23,6 +23,10 @@ const VideosBackground = styled.div`
   height: 100vh;
 `;
 
+const VideoWrapper = styled.div`
+  max-width: 640px;
+`;
+
 const VideoTitle = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,6 +37,7 @@ const VideoTitle = styled.div`
   width: 100%;
   margin-bottom: 24px;
   font-size: 14px;
+  text-align: center;
 `;
 
 const Video = styled.div`
@@ -58,7 +63,9 @@ const VideoPlayIconWrapper = styled.div<VideoStyleProps>`
   border-color: white;
   border-style: solid;
   box-shadow: -4px 4px 16px #000000;
-  transform: ${(p) => (p.$hovering ? 'scale(1.1)' : 'scale(1)')};
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const VideoThumbnail = styled.div`
@@ -105,6 +112,7 @@ const VideoModalPlayer = styled.div`
 export {
   VideosWrapper,
   VideosBackground,
+  VideoWrapper,
   VideoTitle,
   Video,
   VideoPlayIconWrapper,

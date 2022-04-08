@@ -35,7 +35,7 @@ const ContactInfo = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 48px;
+  min-height: 48px;
 
   @media screen and (max-width: 759px) {
     height: auto;

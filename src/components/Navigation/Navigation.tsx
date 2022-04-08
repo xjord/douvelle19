@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,6 +20,11 @@ const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const tabs = [Tabs.Home, Tabs.Music, Tabs.Photos, Tabs.Videos, Tabs.Dates, Tabs.Merch, Tabs.News, Tabs.Contact];
+
+  useEffect(() => {
+    // Disable scrolling if mobile menu open
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'auto';
+  }, [mobileMenuOpen]);
 
   return (
     <NavigationWrapper>

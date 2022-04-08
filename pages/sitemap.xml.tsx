@@ -1,5 +1,3 @@
-import * as fs from 'fs';
-
 const Sitemap = () => {};
 
 export const getServerSideProps = async ({ res }) => {

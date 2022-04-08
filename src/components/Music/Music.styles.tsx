@@ -24,6 +24,7 @@ const MusicTitleWrapper = styled.div`
 const MusicTitle = styled.div`
   font-size: 14px;
   padding-right: 2%;
+  text-align: center;
 `;
 
 const MusicBuyButton = styled.div`

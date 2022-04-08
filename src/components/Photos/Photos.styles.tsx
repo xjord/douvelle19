@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 const InstagramWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-right: 5%;
   padding-left: 5%;
 `;

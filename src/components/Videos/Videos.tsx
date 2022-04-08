@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { faPlay, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   VideosWrapper,
   VideosBackground,
+  VideoWrapper,
   VideoTitle,
   Video,
   VideoPlayIconWrapper,
@@ -23,6 +24,11 @@ const Music = (props) => {
   const [hovering, setHovering] = useState(false);
   const modalOpen = useMemo(() => modalVideo !== '', [modalVideo]);
 
+  useEffect(() => {
+    // Disable scrolling if video modal open
+    document.body.style.overflow = modalOpen ? 'hidden' : 'auto';
+  }, [modalOpen]);
+
   return (
     <VideosWrapper>
       {modalOpen && <VideosBackground onClick={() => setModalVideo('')} />}
@@ -33,21 +39,21 @@ const Music = (props) => {
           const thumbnail = `https://img.youtube.com/vi/${videoId}/0.jpg`;
 
           return (
-            <div key={index}>
+            <VideoWrapper key={index}>
               <VideoTitle>{title}</VideoTitle>
               <Video
                 onClick={() => setModalVideo(videoId)}
-                onMouseEnter={() => setHovering(true)}
-                onMouseLeave={() => setHovering(false)}
+                // onMouseEnter={() => setHovering(true)}
+                // onMouseLeave={() => setHovering(false)}
               >
-                <VideoPlayIconWrapper $hovering={hovering}>
+                <VideoPlayIconWrapper>
                   <FontAwesomeIcon height={24} width={24} icon={faPlay} color="white" />
                 </VideoPlayIconWrapper>
                 <VideoThumbnail>
                   <Image height={400} width={640} src={thumbnail} alt={thumbnail} />
                 </VideoThumbnail>
               </Video>
-            </div>
+            </VideoWrapper>
           );
         })}
       </div>
@@ -55,7 +61,7 @@ const Music = (props) => {
         <VideoModal>
           <VideoCloseWrapper>
             <VideoCloseButton>
-              <FontAwesomeIcon icon={faCircleXmark} onClick={() => setModalVideo('')} />
+              <FontAwesomeIcon icon={faCircleXmark} onClick={() => setModalVideo('')} color="white" />
             </VideoCloseButton>
           </VideoCloseWrapper>
           <VideoModalPlayer>
