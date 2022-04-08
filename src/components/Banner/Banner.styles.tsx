@@ -5,6 +5,7 @@ const BannerWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  min-height: 10%;
   width: 100%;
   padding-left: 5%;
   padding-right: 5%;

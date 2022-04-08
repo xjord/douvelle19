@@ -5,9 +5,7 @@ import SubscriptionForm from '../SubscriptionForm';
 import { MailingListWrapper } from './MailingList.styles';
 
 const MailingList = () => {
-  const mailchimpUrl =
-    'https://Douvelle19.us14.list-manage.com/subscribe/post?u=b60265bc4b7cc8aa648ee2bfc&amp;id=1ca969b5f0';
-  // process.env.MAILCHIMP_URL;
+  const mailchimpUrl = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
 
   return (
     <MailingListWrapper>

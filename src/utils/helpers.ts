@@ -107,7 +107,7 @@ const usePrevious = <T>(value: T | undefined, deps?: ReadonlyArray<any>): T | un
 export const fetchContentfulData = async () => {
   //TODO: move link to ENV variable
   const res = await fetch(
-    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENV_ID}/entries?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+    `https://cdn.contentful.com/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/environments/${process.env.NEXT_PUBLIC_CONTENTFUL_ENV_ID}/entries?access_token=${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
   ).then((response) =>
     response.json().then((data) => {
       return data.items;
@@ -128,7 +128,7 @@ export const fetchContentfulData = async () => {
 
 const fetchContentfulAssest = async (assetId: string) => {
   return await fetch(
-    `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENV_ID}/assets/${assetId}?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+    `https://cdn.contentful.com/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}/environments/${process.env.NEXT_PUBLIC_CONTENTFUL_ENV_ID}/assets/${assetId}?access_token=${process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN}`,
   ).then((response) =>
     response.json().then((data) => {
       return data;

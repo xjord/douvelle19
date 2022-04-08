@@ -6,7 +6,7 @@ export const getServerSideProps = async ({ res }) => {
   const baseUrl = {
     development: 'http://localhost:3000',
     production: 'https://douvelle19.com',
-  }[process.env.NODE_ENV];
+  }[process.env.NEXT_PUBLIC_NODE_ENV];
 
   const paths = [
     'contact.tsx',

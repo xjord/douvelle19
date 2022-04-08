@@ -26,7 +26,7 @@ const Layout = (props) => {
       <Script
         id="gtagmanager"
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
       />
       ;
       <Script id="gtag" strategy="lazyOnload">
@@ -35,7 +35,7 @@ const Layout = (props) => {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           
-          gtag('config', ${process.env.GA_MEASUREMENT_ID});
+          gtag('config', ${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID});
         `}
       </Script>
       <Head>

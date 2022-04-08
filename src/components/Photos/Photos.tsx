@@ -9,7 +9,7 @@ import { InstagramWrapper, FollowButtonWrapper, FollowButton } from './Photos.st
 const Photos = () => {
   return (
     <InstagramWrapper>
-      <InstagramFeed token={process.env.INSTAGRAM_ACCESS_TOKEN} counter="24" />
+      <InstagramFeed token={process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN} counter="24" />
       <FollowButtonWrapper>
         <FollowButton>
           <Button onClick={() => openInTab('https://www.instagram.com/douvelle19/')}>Follow</Button>
