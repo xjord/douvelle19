@@ -13,13 +13,7 @@ import {
   MusicSoundcloud,
 } from './Music.styles';
 
-interface MusicProps {
-  music: any;
-}
-
-const Music = (props: MusicProps) => {
-  const { music } = props;
-
+const Music = ({ music }) => {
   const spotify = music.filter((player) => player.fields.type === 'Spotify');
   const soundcloud = music
     .filter((player) => player.fields.type === 'Soundcloud')

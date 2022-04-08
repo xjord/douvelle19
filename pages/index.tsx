@@ -19,9 +19,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Home = (props) => {
-  const { banner } = props;
-
+const Home = ({ banner }) => {
   return <Banner banner={banner} />;
 };
 

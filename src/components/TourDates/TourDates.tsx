@@ -4,8 +4,7 @@ import InnerHTML from 'dangerously-set-html-content';
 
 import { TourDate, TourDateLoading, TourDateWidget } from './TourDates.styles';
 
-const TourDates = (props) => {
-  const { songKick } = props;
+const TourDates = ({ songKick }) => {
   const [height, setHeight] = useState(0);
   const [datesLoaded, setDatesLoaded] = useState(false);
   const tourDateRef = useRef();

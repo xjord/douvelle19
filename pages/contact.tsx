@@ -19,9 +19,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const ContactsPage = (props) => {
-  const { contacts } = props;
-
+const ContactsPage = ({ contacts }) => {
   return <Contact contacts={contacts} />;
 };
 

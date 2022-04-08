@@ -17,11 +17,8 @@ import {
   VideoModalPlayer,
 } from './Videos.styles';
 
-const Music = (props) => {
-  const { videos } = props;
-
+const Music = ({ videos }) => {
   const [modalVideo, setModalVideo] = useState('');
-  const [hovering, setHovering] = useState(false);
   const modalOpen = useMemo(() => modalVideo !== '', [modalVideo]);
 
   useEffect(() => {
@@ -41,11 +38,7 @@ const Music = (props) => {
           return (
             <VideoWrapper key={index}>
               <VideoTitle>{title}</VideoTitle>
-              <Video
-                onClick={() => setModalVideo(videoId)}
-                // onMouseEnter={() => setHovering(true)}
-                // onMouseLeave={() => setHovering(false)}
-              >
+              <Video onClick={() => setModalVideo(videoId)}>
                 <VideoPlayIconWrapper>
                   <FontAwesomeIcon height={24} width={24} icon={faPlay} color="white" />
                 </VideoPlayIconWrapper>

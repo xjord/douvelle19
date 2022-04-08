@@ -3,9 +3,7 @@ import Image from 'next/image';
 
 import { HeaderWrapper, HeaderLogo } from './Header.styles';
 
-const Header = (props) => {
-  const { logo } = props;
-
+const Header = ({ logo }) => {
   return (
     !!logo && (
       <HeaderWrapper>

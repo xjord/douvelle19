@@ -19,9 +19,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const DatesPage = (props) => {
-  const { songKick } = props;
-
+const DatesPage = ({ songKick }) => {
   return <TourDates songKick={songKick} />;
 };
 

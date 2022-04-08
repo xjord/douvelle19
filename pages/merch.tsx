@@ -19,9 +19,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const MerchPage = (props) => {
-  const { merch } = props;
-
+const MerchPage = ({ merch }) => {
   return <Merch merch={merch} />;
 };
 

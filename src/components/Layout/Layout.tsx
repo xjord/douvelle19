@@ -6,10 +6,8 @@ import Navigation from '../Navigation';
 import { fetchContentfulData } from '../../utils/helpers';
 import { ChildrenWrapper } from './Layout.styles';
 
-const Layout = (props) => {
-  const { children } = props;
-
-  const [data, setData] = useState({});
+const Layout = ({ children }) => {
+  const [data, setData] = useState<{ logo; socials }>();
 
   useEffect(() => {
     const res = fetchContentfulData();

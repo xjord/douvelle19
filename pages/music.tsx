@@ -18,9 +18,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const MusicPage = (props) => {
-  const { music } = props;
-
+const MusicPage = ({ music }) => {
   return <Music music={music} />;
 };
 
