@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { GREY_DARK, GREY, PINK } from '../../constants/index';
+
 const TextFieldWrapper = styled.form`
   display: flex;
   flex-direction: column;
@@ -20,8 +22,8 @@ const TextFieldLabel = styled.div`
 
 const TextFieldInput = styled.input`
   width: 100%;
-  background-color: #373737;
-  color: #aeaeae;
+  background-color: ${GREY_DARK};
+  color: ${GREY};
   border-radius: 4px;
   font-size: 16px;
   border-width: 0;
@@ -39,7 +41,7 @@ const TextFieldErrorMessage = styled.div`
   min-height: 24px;
   width: 100%;
   text-align: left;
-  color: #ffb6c1;
+  color: ${PINK};
 `;
 
 export { TextFieldWrapper, TextFieldLabel, TextFieldInput, TextFieldErrorMessage };

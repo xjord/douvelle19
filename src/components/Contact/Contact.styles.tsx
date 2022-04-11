@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
+import { BLACK, WHITE, GREY } from '../../constants/index';
+
 const ContactWrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: ${WHITE};
   width: 100%;
   max-width: 60%;
   font-size: 18px;
@@ -19,7 +21,7 @@ const ContactItem = styled.form`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: ${BLACK};
   width: 100%;
   padding: 32px;
   border-radius: 8px;
@@ -45,7 +47,7 @@ const ContactInfo = styled.form`
 `;
 
 const ContactTitle = styled.form`
-  color: #aeaeae;
+  color: ${GREY};
 `;
 
 const ContactLink = styled.form`

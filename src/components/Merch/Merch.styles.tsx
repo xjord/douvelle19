@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
+import { WHITE, BLACK, GREY, RED } from '../../constants/index';
+
 const MerchWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flew-wrap: wrap;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: ${WHITE};
   font-size: 18px;
   padding: 0 10%;
 
@@ -22,7 +24,7 @@ const MerchItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  background-color: ${BLACK};
   padding: 32px;
   margin-right: 24px;
   border-radius: 8px;
@@ -57,7 +59,7 @@ const MerchLink = styled.div`
   cursor: pointer;
 
   &:hover: {
-    color: #aeaeae;
+    color: ${GREY};
   }
 
   @media screen and (max-width: 759px) {
@@ -66,7 +68,7 @@ const MerchLink = styled.div`
 `;
 
 const MerchOutOfStock = styled.div`
-  color: red;
+  color: ${RED};
   font-size: 16px;
 
   @media screen and (max-width: 759px) {
@@ -75,7 +77,7 @@ const MerchOutOfStock = styled.div`
 `;
 
 const MerchPrice = styled.div`
-  color: #aeaeae;
+  color: ${GREY};
   font-size: 16px;
 
   @media screen and (max-width: 759px) {

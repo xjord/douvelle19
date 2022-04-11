@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { BLACK, BLACK_GREY, WHITE } from '../../constants/index';
+
 interface VideoStyleProps {
   hovering?: boolean;
 }
@@ -15,7 +17,7 @@ const VideosBackground = styled.div`
   display: flex;
   position: fixed;
   opacity: 0.7;
-  background-color: #111111;
+  background-color: ${BLACK_GREY};
   top: 0;
   bottom: 0;
   z-index: 998;
@@ -33,7 +35,7 @@ const VideoTitle = styled.div`
   align-content: center;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: ${WHITE};
   width: 100%;
   margin-bottom: 24px;
   font-size: 14px;
@@ -60,7 +62,7 @@ const VideoPlayIconWrapper = styled.div<VideoStyleProps>`
   height: 60px;
   border-radius: 50%;
   border-width: 4px;
-  border-color: white;
+  border-color: ${WHITE};
   border-style: solid;
   box-shadow: -4px 4px 16px #000000;
   &:hover {
@@ -71,7 +73,7 @@ const VideoPlayIconWrapper = styled.div<VideoStyleProps>`
 const VideoThumbnail = styled.div`
   border-radius: 8px;
   overflow: hidden;
-  background-color: black;
+  background-color: ${BLACK};
   width: 100%;
 `;
 
@@ -101,10 +103,10 @@ const VideoCloseButton = styled.div`
 const VideoModalPlayer = styled.div`
   width: 100%;
   border-width: 4px;
-  border-color: white;
+  border-color: ${WHITE};
   border-style: solid;
   border-radius: 4px;
-  background-color: black;
+  background-color: ${BLACK};
   cursor: pointer;
   box-shadow: -4px 4px 16px #000000;
 `;

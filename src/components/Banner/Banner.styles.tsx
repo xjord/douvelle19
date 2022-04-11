@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { WHITE } from '../../constants/index';
+
 const BannerWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -16,7 +18,7 @@ const Banner = styled.div`
   justify-content: space-between;
   width: 100%;
   max-width: 900px;
-  color: white;
+  color: ${WHITE};
   gap: 50px;
 
   @media screen and (max-width: 759px) {

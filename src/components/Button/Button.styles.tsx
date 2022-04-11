@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { DISABLED_BLACK_OPACITY, WHITE, BLACK } from '../../constants/index';
+
 interface ButtonProps {
   width?: number;
   disabled?: boolean;
@@ -14,10 +16,10 @@ const ButtonWrapper = styled.div<ButtonProps>`
   padding-left: 30px;
   padding-right: 30px;
   width: ${(p) => (p.$width ? `${p.$width}px` : '100%')};
-  background-color: ${(p) => (p.$disabled ? 'rgba(255, 255, 255, 0.5)' : 'white')};
+  background-color: ${(p) => (p.$disabled ? DISABLED_BLACK_OPACITY : WHITE)};
   font-weight: 500;
   border-radius: 4px;
-  color: black;
+  color: ${BLACK};
   cursor: pointer;
 
   &:hover {

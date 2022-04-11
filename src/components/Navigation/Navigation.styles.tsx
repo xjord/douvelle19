@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
+import { WHITE } from '../../constants/index';
+
 const NavigationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: ${WHITE};
   padding-bottom: 5vh;
 `;
 

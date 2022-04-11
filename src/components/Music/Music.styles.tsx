@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { WHITE, RED } from '../../constants/index';
+
 const MusicWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,7 +18,7 @@ const MusicTitleWrapper = styled.div`
   align-content: center;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: ${WHITE};
   width: 100%;
   margin-bottom: 24px;
 `;
@@ -30,7 +32,7 @@ const MusicTitle = styled.div`
 const MusicBuyButton = styled.div`
   font-size: 14px;
   padding-left: 2%;
-  color: red;
+  color: ${RED};
   cursor: pointer;
 `;
 

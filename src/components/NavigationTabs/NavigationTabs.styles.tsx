@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { WHITE, BLACK, PINK } from '../../constants/index';
+
 interface NavigationTabsProps {
   mobileMenuOpen?: boolean;
   isActive?: boolean;
@@ -8,13 +10,13 @@ interface NavigationTabsProps {
 const NavigationTabsWrapper = styled.div<NavigationTabsProps>`
   display: flex;
   justify-content: space-between;
-  color: white;
+  color: ${WHITE};
   width: 100%;
   max-width: 654px;
 
   @media screen and (max-width: 759px) {
     display: ${(p) => (p.$mobileMenuOpen ? 'flex' : 'none')};
-    background-color: ${(p) => p.$mobileMenuOpen && 'black'};
+    background-color: ${(p) => p.$mobileMenuOpen && BLACK};
     flex-direction: ${(p) => (p.$mobileMenuOpen ? 'column' : 'row')};
     justify-content: ${(p) => (p.$mobileMenuOpen ? 'flex-start' : 'space-between')};
     align-items: ${(p) => p.$mobileMenuOpen && 'center'};
@@ -32,7 +34,7 @@ const NavigationTab = styled.div<NavigationTabsProps>`
   justify-content: center;
   align-ttems: center;
   cursor: pointer;
-  color: ${(p) => (p.$isActive ? 'pink' : 'white')};
+  color: ${(p) => (p.$isActive ? PINK : WHITE)};
 
   @media screen and (max-width: 759px) {
     padding: 14px;

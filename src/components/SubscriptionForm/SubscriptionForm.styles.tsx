@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { BLACK, WHITE, PINK } from '../../constants/index';
+
 interface SubscriptionFormProps {
   subscribed?: boolean;
 }
@@ -10,9 +12,9 @@ const FormWrapper = styled.form`
   flew-wrap: wrap;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: ${WHITE};
   width: 100%;
-  background-color: black;
+  background-color: ${BLACK};
   border-radius: 8px;
   overflow: hidden;
   padding: 3% 10%;
@@ -38,8 +40,8 @@ const FormMessage = styled.div<SubscriptionFormProps>`
   text-align: center;
   font-size: 14px;
   max-width: 450px;
-  color: white;
-  color: ${(p) => (p.$subscribed ? '#ffb6c1' : 'white')};
+  color: ${WHITE};
+  color: ${(p) => (p.$subscribed ? PINK : WHITE)};
   margin-top: 28px;
 `;
 

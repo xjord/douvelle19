@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
+import { WHITE } from '../../constants/index';
+
 const TourDate = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: column;
   align-items: center;
   width: 100%;
-  color: white;
+  color: ${WHITE};
 `;
 
 const TourDateLoading = styled.div`

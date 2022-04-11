@@ -1,10 +1,5 @@
 import { Sys, Metadata } from 'contentful';
 
-// TODO: rename
-export interface ITourDates {
-  banner: Response[];
-}
-
 export interface Response {
   sys: Sys;
   fields: Field;
