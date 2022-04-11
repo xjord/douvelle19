@@ -32,7 +32,7 @@ const Navigation = () => {
         <FontAwesomeIcon
           icon={mobileMenuOpen ? faCircleXmark : faBars}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          width={16}
+          width={28}
         />
       </NavigationHamburger>
       <NavigationTabs tabs={tabs} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
