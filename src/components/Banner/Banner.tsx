@@ -31,6 +31,7 @@ const Home = ({ banner }) => {
               src={'https:' + releaseImage}
               alt={releaseTitle}
               onClick={() => openInTab(releaseLink)}
+              priority
             />
           </BannerImage>
         </BannerImageWrapper>
