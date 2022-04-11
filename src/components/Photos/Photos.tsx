@@ -6,15 +6,23 @@ import Button from '../Button';
 import { openInTab } from '../../utils/helpers';
 import { InstagramWrapper, FollowButtonWrapper, FollowButton } from './Photos.styles';
 
-const Photos = () => {
+interface PhotoProps {
+  followLink?: string;
+}
+
+const Photos = ({ followLink }: PhotoProps) => {
   return (
     <InstagramWrapper>
       <InstagramFeed token={process.env.NEXT_PUBLIC_INSTAGRAM_ACCESS_TOKEN} counter="24" />
-      <FollowButtonWrapper>
-        <FollowButton>
-          <Button onClick={() => openInTab('https://www.instagram.com/douvelle19/')}>Follow</Button>
-        </FollowButton>
-      </FollowButtonWrapper>
+      {followLink && (
+        <FollowButtonWrapper>
+          <FollowButton>
+            <Button onClick={() => openInTab(followLink)}>
+              <>Follow</>
+            </Button>
+          </FollowButton>
+        </FollowButtonWrapper>
+      )}
     </InstagramWrapper>
   );
 };
