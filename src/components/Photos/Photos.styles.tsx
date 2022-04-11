@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { BLACK_GREY } from '../../constants/index';
+
 const InstagramWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,6 +9,7 @@ const InstagramWrapper = styled.div`
   justify-content: center;
   padding-right: 5%;
   padding-left: 5%;
+  color: ${BLACK_GREY};
 `;
 
 const FollowButtonWrapper = styled.div`
