@@ -41,7 +41,9 @@ const Home = ({ banner }) => {
             <BannerOutNow>OUT NOW</BannerOutNow>
           </BannerInfo>
           <BannerButtonWrapper>
-            <Button onClick={() => openInTab(releaseLink)}>Stream/Purchase</Button>
+            <Button onClick={() => openInTab(releaseLink)}>
+              <>Stream/Purchase</>
+            </Button>
           </BannerButtonWrapper>
         </BannerText>
       </Banner>
