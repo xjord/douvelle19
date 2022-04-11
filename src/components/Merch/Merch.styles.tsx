@@ -5,12 +5,12 @@ import { WHITE, BLACK, GREY, RED, MOBILE_WIDTH } from '../../constants/index';
 const MerchWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  flew-wrap: wrap;
   align-items: center;
   justify-content: center;
   color: ${WHITE};
   font-size: 18px;
   padding: 0 10%;
+  flex-wrap: wrap;
 
   @media screen and (max-width: ${MOBILE_WIDTH}) {
     flex-direction: column;
