@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { WHITE, BLACK, PINK } from '../../constants/index';
+import { WHITE, BLACK, PINK, MOBILE_WIDTH } from '../../constants/index';
 
 interface NavigationTabsProps {
   mobileMenuOpen?: boolean;
@@ -14,7 +14,7 @@ const NavigationTabsWrapper = styled.div<NavigationTabsProps>`
   width: 100%;
   max-width: 654px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     display: ${(p) => (p.$mobileMenuOpen ? 'flex' : 'none')};
     background-color: ${(p) => p.$mobileMenuOpen && BLACK};
     flex-direction: ${(p) => (p.$mobileMenuOpen ? 'column' : 'row')};
@@ -36,7 +36,7 @@ const NavigationTab = styled.div<NavigationTabsProps>`
   cursor: pointer;
   color: ${(p) => (p.$isActive ? PINK : WHITE)};
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     padding: 14px;
   }
   &:hover {

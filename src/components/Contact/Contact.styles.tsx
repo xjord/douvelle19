@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { BLACK, WHITE, GREY } from '../../constants/index';
+import { BLACK, WHITE, GREY, MOBILE_WIDTH } from '../../constants/index';
 
 const ContactWrapper = styled.form`
   display: flex;
@@ -28,7 +28,7 @@ const ContactItem = styled.form`
   overflow: hidden;
   margin-bottom: 24px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     flex-direction: column;
   }
 `;
@@ -39,7 +39,7 @@ const ContactInfo = styled.form`
   justify-content: space-between;
   min-height: 48px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     height: auto;
     text-align: center;
     margin-bottom: 12px;

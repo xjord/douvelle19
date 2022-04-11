@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { WHITE } from '../../constants/index';
+import { WHITE, MOBILE_WIDTH } from '../../constants/index';
 
 const BannerWrapper = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const Banner = styled.div`
   color: ${WHITE};
   gap: 50px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     flex-direction: column;
     align-content: center;
     align-items: center;
@@ -35,7 +35,7 @@ const BannerImageWrapper = styled.div`
   box-shadow: -4px 4px 16px #000000;
   max-height: 500px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     margin-right: 0px;
   }
 `;
@@ -54,14 +54,14 @@ const BannerText = styled.div`
   justify-content: center;
   max-width: 300px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     width: 100%;
     max-width: 500px;
   }
 `;
 
 const BannerInfo = styled.div`
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,7 +71,7 @@ const BannerInfo = styled.div`
 const BannerTitle = styled.div`
   font-size: 42px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     max-width: 70%;
   }
 `;

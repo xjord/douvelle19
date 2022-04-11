@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { WHITE } from '../../constants/index';
+import { WHITE, MOBILE_WIDTH } from '../../constants/index';
 
 const NavigationWrapper = styled.div`
   display: flex;
@@ -19,7 +19,7 @@ const NavigationHamburger = styled.div`
   width: 24px;
   z-index: 1001;
 
-  @media screen and (min-width: 759px) {
+  @media screen and (min-width: ${MOBILE_WIDTH}) {
     display: none;
   }
   &:hover {

@@ -7,3 +7,6 @@ export const GREY = '#AEAEAE';
 export const GREY_DARK = '#373737';
 export const RED = '#FF0000';
 export const PINK = '#FFC0CB';
+
+// Media queries
+export const MOBILE_WIDTH = '759px';

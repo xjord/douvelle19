@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { WHITE, BLACK, GREY, RED } from '../../constants/index';
+import { WHITE, BLACK, GREY, RED, MOBILE_WIDTH } from '../../constants/index';
 
 const MerchWrapper = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const MerchWrapper = styled.div`
   font-size: 18px;
   padding: 0 10%;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     flex-direction: column;
     padding: 0;
   }
@@ -31,7 +31,7 @@ const MerchItem = styled.div`
   overflow: hidden;
   margin-top: 24px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     margin-right: 0px;
   }
 `;
@@ -62,7 +62,7 @@ const MerchLink = styled.div`
     color: ${GREY};
   }
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     font-size: 14px;
   }
 `;
@@ -71,7 +71,7 @@ const MerchOutOfStock = styled.div`
   color: ${RED};
   font-size: 16px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     font-size: 14px;
   }
 `;
@@ -80,7 +80,7 @@ const MerchPrice = styled.div`
   color: ${GREY};
   font-size: 16px;
 
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     font-size: 14px;
   }
 `;

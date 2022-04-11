@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { WHITE } from '../../constants/index';
+import { WHITE, MOBILE_WIDTH } from '../../constants/index';
 
 const TourDate = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ const TourDateWidget = styled.div`
   display: auto;
   width: 100%;
   max-width: 80%;
-  @media screen and (max-width: 759px) {
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
     max-width: 100%;
   }
 `;
