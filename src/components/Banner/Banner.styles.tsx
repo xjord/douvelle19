@@ -15,8 +15,9 @@ const Banner = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   color: white;
+  gap: 50px;
 
   @media screen and (max-width: 759px) {
     flex-direction: column;
@@ -49,10 +50,11 @@ const BannerText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 500px;
+  max-width: 300px;
 
   @media screen and (max-width: 759px) {
     width: 100%;
+    max-width: 500px;
   }
 `;
 
@@ -66,6 +68,10 @@ const BannerInfo = styled.div`
 
 const BannerTitle = styled.div`
   font-size: 42px;
+
+  @media screen and (max-width: 759px) {
+    max-width: 70%;
+  }
 `;
 
 const BannerOutNow = styled.div`
