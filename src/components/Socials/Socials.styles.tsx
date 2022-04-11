@@ -8,10 +8,6 @@ const SocialWrapper = styled.div`
   justify-content: center;
   z-index: 9999;
   color: white;
-
-  @media screen and (max-width: 759px) {
-    display: none;
-  }
 `;
 
 const SocialLogo = styled.div`
