@@ -17,9 +17,7 @@ const Photos = ({ followLink }: PhotoProps) => {
       {followLink && (
         <FollowButtonWrapper>
           <FollowButton>
-            <Button onClick={() => openInTab(followLink)}>
-              <>Follow</>
-            </Button>
+            <Button onClick={() => openInTab(followLink)}>Follow</Button>
           </FollowButton>
         </FollowButtonWrapper>
       )}

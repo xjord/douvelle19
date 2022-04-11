@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { BLACK, WHITE, GREY, MOBILE_WIDTH } from '../../constants/index';
 
-const ContactWrapper = styled.form`
+const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +17,7 @@ const ContactWrapper = styled.form`
   }
 `;
 
-const ContactItem = styled.form`
+const ContactItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +33,7 @@ const ContactItem = styled.form`
   }
 `;
 
-const ContactInfo = styled.form`
+const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,15 +46,15 @@ const ContactInfo = styled.form`
   }
 `;
 
-const ContactTitle = styled.form`
+const ContactTitle = styled.div`
   color: ${GREY};
 `;
 
-const ContactLink = styled.form`
+const ContactLink = styled.div`
   font-weight: 600;
 `;
 
-const ContactButtonWrapper = styled.form`
+const ContactButtonWrapper = styled.div`
   width: 100%;
   max-width: 200px;
 `;

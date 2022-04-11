@@ -6,7 +6,7 @@ interface SubscriptionFormProps {
   subscribed?: boolean;
 }
 
-const FormWrapper = styled.form`
+const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flew-wrap: wrap;
