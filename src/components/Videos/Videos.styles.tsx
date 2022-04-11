@@ -48,6 +48,10 @@ const Video = styled.div`
   align-items: center;
   position: relative;
   margin-bottom: 40px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 const VideoPlayIconWrapper = styled.div<VideoStyleProps>`
