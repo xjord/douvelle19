@@ -25,6 +25,7 @@ const Banner = styled.div`
     flex-direction: column;
     align-content: center;
     align-items: center;
+    gap: 0;
   }
 `;
 
