@@ -9,6 +9,10 @@ const NavigationWrapper = styled.div`
   align-items: center;
   color: ${WHITE};
   padding-bottom: 5vh;
+
+  @media screen and (max-width: ${MOBILE_WIDTH}) {
+    padding-bottom: 0;
+  }
 `;
 
 const NavigationHamburger = styled.div`
@@ -19,12 +23,13 @@ const NavigationHamburger = styled.div`
   width: 24px;
   z-index: 1001;
 
-  @media screen and (min-width: ${MOBILE_WIDTH}) {
-    display: none;
-  }
   &:hover {
     opacity: 0.8;
     cursor: pointer;
+  }
+
+  @media screen and (min-width: ${MOBILE_WIDTH}) {
+    display: none;
   }
 `;
 
