@@ -38,6 +38,7 @@ const BannerImageWrapper = styled.div`
 
   @media screen and (max-width: ${MOBILE_WIDTH}) {
     margin-right: 0px;
+    box-shadow: none;
   }
 `;
 
