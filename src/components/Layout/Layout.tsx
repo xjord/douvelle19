@@ -19,8 +19,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {logo && <Header logo={logo} />}
       <Socials socials={socials} />
+      {logo && <Header logo={logo} />}
       <Navigation />
       <ChildrenWrapper>{children}</ChildrenWrapper>
     </>
