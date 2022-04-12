@@ -4,7 +4,7 @@ import { WHITE } from '../../constants/index';
 
 const SocialWrapper = styled.div`
   position: absolute;
-  top: 17px;
+  top: 24px;
   right: 24px;
   display: flex;
   justify-content: center;
