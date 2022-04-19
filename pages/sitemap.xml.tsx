@@ -6,16 +6,7 @@ export const getServerSideProps = async ({ res }) => {
     production: 'https://douvelle19.com',
   }[process.env.NEXT_PUBLIC_NODE_ENV];
 
-  const paths = [
-    'contact.tsx',
-    'dates.tsx',
-    'index.tsx',
-    'merch.tsx',
-    'music.tsx',
-    'news.tsx',
-    'photos.tsx',
-    'videos.tsx',
-  ];
+  const paths = ['contact', 'dates', 'index', 'merch', 'music', 'news', 'photos', 'videos'];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
