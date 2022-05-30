@@ -4,6 +4,7 @@ import 'react-ig-feed/dist/index.css';
 
 import Button from '../Button';
 import { openInTab } from '../../utils/helpers';
+
 import { InstagramWrapper, FollowButtonWrapper, FollowButton } from './Photos.styles';
 
 interface PhotoProps {
